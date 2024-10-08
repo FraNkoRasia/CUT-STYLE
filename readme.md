@@ -7,7 +7,7 @@
 
 [Asignacion de Tareas](https://docs.google.com/spreadsheets/d/18w2gIcq4hrf0KqOoz_SdIUqFBN7WTaXRO4Si-27eXDk/edit?gid=0#gid=0)
 
-[Historias de Usuario-Casos de Prueba-Ejecuciones-Incidencias-Grafico Semana 1]https://docs.google.com/spreadsheets/d/1IeTGQxmWhDqV2Tqto9KcKhaz-luSz5x3/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true
+[Historias de Usuario-Casos de Prueba-Ejecuciones-Incidencias-Grafico Semana 1] (https://docs.google.com/spreadsheets/d/1IeTGQxmWhDqV2Tqto9KcKhaz-luSz5x3/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true)
 
 
 ## Roles del equipo
