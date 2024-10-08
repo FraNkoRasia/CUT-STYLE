@@ -1,0 +1,140 @@
+* {
+    font-family: Arial;
+}
+
+/* Contenedor del menú hamburguesa */
+.hamburguesa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+/* Fijar altura y estilos del navbar */
+nav {
+    background-color: #1B1C1E;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+/* Ocultar el menú por defecto */
+ul {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    padding: 5px 0;
+
+    img {
+        width: 130px;
+    }
+}
+
+/* Mostrar el menú cuando se selecciona el checkbox */
+.checkHamburguer:checked~ul {
+    display: block;
+}
+
+/* Ocultar el checkbox */
+.checkHamburguer {
+    display: none;
+}
+
+/* Estilo general para el botón hamburguesa */
+.hamburguesita {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+
+}
+
+/* Pseudo-elementos para las barras del menú hamburguesa */
+.hamburguesita::before,
+.hamburguesita::after,
+.hamburguesita span {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    left: 0;
+    transition: 0.3s ease-in-out;
+
+}
+
+/* Barra superior */
+.hamburguesita::before {
+    top: 6px;
+}
+
+/* Barra inferior */
+.hamburguesita::after {
+    top: 22px;
+}
+
+/* Barra media */
+.hamburguesita span {
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s ease-in-out;
+}
+
+/* Al hacer clic (checkbox activado), transformar las barras en una cruz */
+.checkHamburguer:checked+.hamburguesita::before {
+    transform: rotate(45deg);
+    top: 15px;
+}
+
+.checkHamburguer:checked+.hamburguesita::after {
+    transform: rotate(-45deg);
+    top: 15px;
+}
+
+/* Ocultar la barra media cuando se despliega el menú */
+.checkHamburguer:checked+.hamburguesita span {
+    display: none;
+}
+
+/* Estilos del menú desplegable */
+.ul {
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 180px;
+    background: #0D0D0D;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 1000;
+
+    li {
+        color: #AFB1B6;
+        font-weight: 400;
+        font-size: 21px;
+        list-style: none;
+        margin: 0 0 10px 0;
+        font-family: 'Monserrat', sans-serif;
+    }
+
+    /* Estilo cuando el mouse pasa sobre cada link del menú */
+    li:hover {
+        font-weight: 700;
+        color: #E96E1D;
+    }
+}
+
