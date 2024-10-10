@@ -25,6 +25,8 @@ nav {
 /* Ocultar el menú por defecto */
 ul {
     display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .logo {
@@ -42,6 +44,7 @@ ul {
 /* Mostrar el menú cuando se selecciona el checkbox */
 .checkHamburguer:checked~ul {
     display: block;
+    opacity: 1;
 }
 
 /* Ocultar el checkbox */

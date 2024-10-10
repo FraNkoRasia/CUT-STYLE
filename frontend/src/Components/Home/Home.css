@@ -24,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    /* Ajustar la altura si es necesario */
     width: 100%;
     margin-bottom: 15px;
     z-index: 1;
@@ -33,12 +33,12 @@
 .leaflet-map {
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 300px;
+    height: 400px;
+    /* Puedes ajustar la altura aquí según lo necesites */
     width: 90%;
-    /* Puedes ajustar este ancho según lo que prefieras */
     border-radius: 20px;
-
 }
+
 
 .titulomap {
     font-family: "Exo", sans-serif;
@@ -116,6 +116,13 @@
             color: #FAFAFA;
 
         }
+
+        .botonhome:hover {
+            background-color: #E96E1D;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease;
+        }
+
     }
 }
 

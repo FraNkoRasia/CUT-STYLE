@@ -55,13 +55,13 @@ const Register = () => {
         if (showMessage) {
             const timer = setTimeout(() => {
                 setShowMessage(false);
-            }, 5000); 
+            }, 5000);
             return () => clearTimeout(timer);
         }
     }, [showMessage]);
 
     return (
-        <div className="register-container">
+        <div className="form-container">
             <section className='section-formulario'>
                 <form className='Formulario' onSubmit={handleSubmit}>
                     <h1>REGISTER</h1>
@@ -76,7 +76,7 @@ const Register = () => {
                     <label htmlFor="lastName">Last Name</label>
                     <input id="lastName" name="lastName" type="text" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
                     <label htmlFor="phone">Phone</label>
-                    <input id="phone" name="phone" type="text" placeholder="Phone" value={formData.lastName} onChange={handleChange} required />
+                    <input id="phone" name="phone" type="number" placeholder="Phone" value={formData.phone} onChange={handleChange} required />
                     <div className='checkbox'>
                         <input type="checkbox" name="tyc" id="tyc" checked={formData.tyc} onChange={handleChange} required />
                         <label htmlFor="tyc"> I accept terms and conditions</label>
