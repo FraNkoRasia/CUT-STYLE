@@ -2,7 +2,6 @@
     font-family: Arial;
 }
 
-/* Contenedor del menú hamburguesa */
 .hamburguesa {
     display: flex;
     flex-direction: row;
@@ -12,7 +11,6 @@
     margin-left: 15px;
 }
 
-/* Fijar altura y estilos del navbar */
 nav {
     background-color: #1B1C1E;
     display: flex;
@@ -22,11 +20,15 @@ nav {
     padding: 0 10px;
 }
 
-/* Ocultar el menú por defecto */
 ul {
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+}
+
+.ul.open {
+    display: block;
+    opacity: 1;
 }
 
 .logo {
@@ -35,24 +37,12 @@ ul {
     gap: 10px;
     margin-left: 10px;
     padding: 5px 0;
-
-    img {
-        width: 130px;
-    }
 }
 
-/* Mostrar el menú cuando se selecciona el checkbox */
-.checkHamburguer:checked~ul {
-    display: block;
-    opacity: 1;
+.logo img {
+    width: 130px;
 }
 
-/* Ocultar el checkbox */
-.checkHamburguer {
-    display: none;
-}
-
-/* Estilo general para el botón hamburguesa */
 .hamburguesita {
     box-sizing: border-box;
     display: inline-block;
@@ -60,10 +50,8 @@ ul {
     height: 30px;
     cursor: pointer;
     position: relative;
-
 }
 
-/* Pseudo-elementos para las barras del menú hamburguesa */
 .hamburguesita::before,
 .hamburguesita::after,
 .hamburguesita span {
@@ -74,7 +62,6 @@ ul {
     background-color: rgb(255, 255, 255);
     left: 0;
     transition: 0.3s ease-in-out;
-
 }
 
 /* Barra superior */
@@ -97,23 +84,22 @@ ul {
     transition: 0.3s ease-in-out;
 }
 
-/* Al hacer clic (checkbox activado), transformar las barras en una cruz */
-.checkHamburguer:checked+.hamburguesita::before {
+
+.hamburguesita.open::before {
     transform: rotate(45deg);
     top: 15px;
 }
 
-.checkHamburguer:checked+.hamburguesita::after {
+.hamburguesita.open::after {
     transform: rotate(-45deg);
     top: 15px;
 }
 
-/* Ocultar la barra media cuando se despliega el menú */
-.checkHamburguer:checked+.hamburguesita span {
+
+.hamburguesita.open span {
     display: none;
 }
 
-/* Estilos del menú desplegable */
 .ul {
     margin-top: 10px;
     padding: 10px 20px;
@@ -124,20 +110,30 @@ ul {
     top: 50px;
     right: 10px;
     z-index: 1000;
-
-    li {
-        color: #AFB1B6;
-        font-weight: 400;
-        font-size: 21px;
-        list-style: none;
-        margin: 0 0 10px 0;
-        font-family: 'Monserrat', sans-serif;
-    }
-
-    /* Estilo cuando el mouse pasa sobre cada link del menú */
-    li:hover {
-        font-weight: 700;
-        color: #E96E1D;
-    }
 }
 
+.ul li {
+    color: #AFB1B6;
+    font-weight: 400;
+    font-size: 21px;
+    list-style: none;
+    margin: 0 0 10px 0;
+    font-family: 'Monserrat', sans-serif;
+}
+
+.ul li:hover {
+    font-weight: 700;
+    color: #E96E1D;
+}
+
+
+
+@media (min-width: 640px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1024px) {}
+
+@media (min-width: 1280px) {}
+
+@media (min-width: 1536px) {}

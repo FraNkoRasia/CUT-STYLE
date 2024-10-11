@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../Header/Header.css';
 import { Link, useNavigate } from 'react-router-dom';
-import logoImage from '/logo.png'; // Si no lo usas, puedes eliminarlo
+import logoImage from '/logo.png';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userRole, setUserRole] = useState(null);
+    const menuRef = useRef(null);
+    const hamburguesaRef = useRef(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         const checkAuthStatus = () => {
             const token = sessionStorage.getItem('token');
-            const loggedIn = !!token; // Verifica si el token existe
+            const loggedIn = !!token;
             setIsLoggedIn(loggedIn);
             if (loggedIn) {
                 const role = sessionStorage.getItem('rol');
@@ -32,21 +34,48 @@ export default function Header() {
         window.location.href = '/login';
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Si el clic no está en el menú ni en el botón de hamburguesa
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(event.target) &&
+                hamburguesaRef.current &&
+                !hamburguesaRef.current.contains(event.target)
+            ) {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('mouseup', handleClickOutside);
+        return () => {
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
+    }, []);
+
     return (
         <header>
             <nav>
-
                 <div className="hamburguesa">
                     <div className="logo">
                         <Link to="/">
                             <img src={logoImage} alt="logo" />
                         </Link>
                     </div>
-                    <input className='checkHamburguer' type="checkbox" id="menu" />
-                    <label className='hamburguesita' htmlFor="menu">
+
+                    <label
+                        ref={hamburguesaRef}
+                        className={`hamburguesita ${menuOpen ? 'open' : ''}`}
+                        htmlFor="menu"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
                         <span></span>
                     </label>
-                    <ul className={`ul ${menuOpen ? 'open' : ''}`}>
+
+                    <ul
+                        ref={menuRef} // Ref al menú
+                        className={`ul ${menuOpen ? 'open' : ''}`}
+                    >
                         {!isLoggedIn && (
                             <>
                                 <li><Link to="/" onClick={() => handleMenuClick('/')}>Home</Link></li>
@@ -56,12 +85,12 @@ export default function Header() {
                         )}
                         {isLoggedIn && userRole === 'Administrador' && (
                             <>
-                               
+                                {/* Opciones para Administrador */}
                             </>
                         )}
                         {isLoggedIn && userRole === 'Usuario' && (
                             <>
-                                
+                                {/* Opciones para Usuario */}
                             </>
                         )}
                     </ul>
