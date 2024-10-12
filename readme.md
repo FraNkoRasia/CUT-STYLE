@@ -1,5 +1,27 @@
 # Gestión de peluqerias 
 
+Gestión de Peluquerías - MVP
+Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la gestión de peluquerías. La aplicación permite a los dueños de peluquerías manejar las citas de sus clientes, administrar el personal, gestionar los servicios ofrecidos y visualizar reportes básicos sobre las operaciones diarias.
+
+Características principales
+
+-Gestión de citas: Permite a los clientes reservar citas con los estilistas disponibles en la peluquería.
+
+-Administración del personal: Permite al administrador añadir, editar o eliminar empleados.
+
+-Gestión de servicios: Los administradores pueden gestionar los servicios ofrecidos, incluyendo precios y tiempos estimados.
+
+-Panel de reportes: Ofrece una visión básica de las citas y los ingresos generados.
+
+-Notificaciones por correo electrónico: Envía recordatorios automáticos a los clientes para sus citas.
+
+Uso
+
+1.Administrar peluquería: Los administradores pueden gestionar las citas, el personal y los servicios.
+
+2.Reservar citas: Los clientes pueden seleccionar un servicio y un estilista, y luego reservar una cita.
+
+3.Panel de control: Los administradores pueden visualizar un resumen de las citas diarias, los ingresos generados y los empleados disponibles.
 
 ## Testing
 
