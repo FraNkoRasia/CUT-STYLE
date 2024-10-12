@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Header/Header.css';
 import { Link, useNavigate } from 'react-router-dom';
-import logoImage from '/logo.png';
+import logoImage from '/MODELO22.png';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -79,7 +79,8 @@ export default function Header() {
                         {!isLoggedIn && (
                             <>
                                 <li><Link to="/" onClick={() => handleMenuClick('/')}>Home</Link></li>
-                                <li><Link to="/register" onClick={() => handleMenuClick('/register')}>Register</Link></li>
+                                <li><Link to="/register" onClick={() => handleMenuClick('/register')}>Register User</Link></li>
+                                <li><Link to="/registerstylist" onClick={() => handleMenuClick('/registerstylist')}>Register Stylist</Link></li>
                                 <li><Link to="/login" onClick={() => handleMenuClick('/login')}>Login</Link></li>
                             </>
                         )}
