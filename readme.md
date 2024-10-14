@@ -31,7 +31,7 @@ Uso
 
 [Historias de Usuario-Casos de Prueba-Ejecuciones-Incidencias-Grafico](https://docs.google.com/spreadsheets/d/1IeTGQxmWhDqV2Tqto9KcKhaz-luSz5x3/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true)
 
-[PLanilla de Testing Exploratorio](https://docs.google.com/spreadsheets/d/1nJxGLKjVCeYYQzORKx69tH6SLHTqqoSA/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true)
+[Planilla de Testing Exploratorio](https://docs.google.com/spreadsheets/d/1nJxGLKjVCeYYQzORKx69tH6SLHTqqoSA/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true)
 
 ## Roles del equipo
 
