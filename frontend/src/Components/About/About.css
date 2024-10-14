@@ -1,0 +1,143 @@
+.about-container {
+    display: flex;
+    content: '';
+    background-image: url('/fondoabout.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+    z-index: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    /* Esto asegura que todas las cartas tengan la misma altura */
+    width: 90%;
+    margin: 0 auto 5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Distribuye el contenido entre la parte superior y la inferior */
+    width: 290px;
+    margin: 10px;
+    transition: all 300ms;
+    flex-grow: 1;
+    /* Permite que las tarjetas se estiren al mismo tamaño */
+}
+
+.card .cover {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .cover img {
+    width: 250px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.5));
+    transition: all 400ms;
+}
+
+.card:hover .cover img {
+    top: 6px;
+    filter: none;
+}
+
+.card .img__back {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+
+.card .description {
+    background-image: url('/fondo.png');
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    transition: all 300ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Asegura que los íconos estén abajo */
+    flex-grow: 1;
+    max-width: 280px;
+    margin: auto;
+    font-family: "Monserrat", sans-serif;
+}
+
+.card .description div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: auto;
+    /* Asegura que el contenedor de íconos esté al final */
+    margin: 15px 0 0;
+}
+
+.card .description h2 {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    filter: drop-shadow(10px 10px 2px rgb(0, 0, 0));
+    transition: transform 0.4s ease;
+}
+
+.card .description h2:hover {
+    transform: scale(1.1);
+}
+
+.card .description .desc {
+    font-size: 13px;
+    line-height: 1.5;
+    /* Mejora la distribución del texto */
+    text-align: justify;
+    /* Ajusta el texto a ambos lados del contenedor */
+}
+
+.roldev {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+.iconolinkedin,
+.iconogithub {
+    width: 3rem;
+    height: auto;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(10px 10px 2px rgb(0, 0, 0));
+}
+
+.iconolinkedin:hover,
+.iconogithub:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(10px 10px 2px rgb(0, 0, 0));
+}
+
+@media (min-width: 768px) {
+    .card .description .desc {
+        font-size: 16px;
+    }
+}

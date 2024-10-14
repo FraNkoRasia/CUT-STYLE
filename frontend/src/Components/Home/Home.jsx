@@ -1,7 +1,12 @@
-import React, { useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useRef, useState } from 'react';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import '../Home/Home.css';
+
+// Establece el elemento de la aplicación para el modal
+Modal.setAppElement('#root');
 
 // Configuración del icono para evitar errores con los marcadores
 delete L.Icon.Default.prototype._getIconUrl;
@@ -15,6 +20,10 @@ export default function Home() {
   // Define una referencia para el mapa
   const mapRef = useRef(null);
 
+  // Estado para el modal
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({});
+
   // Función para deslizar hasta el mapa
   const handleScrollToMap = () => {
     if (mapRef.current) {
@@ -24,10 +33,36 @@ export default function Home() {
 
   // Define las posiciones de los marcadores (latitud, longitud)
   const markers = [
-    { position: [-33.12233329038794, -64.35634635208058], text: 'Barberqueen Peluqueria' },
-    { position: [-33.12224343572072, -64.34857867524579], text: 'Pervieux Estilistas' },
-    { position: [-33.121031896531846, -64.35848360992675], text: 'Barbercoffe' },
+    {
+      position: [-33.12233329038794, -64.35634635208058],
+      text: 'Barberqueen Peluqueria',
+      imageUrl: 'https://uiparadox.co.uk/templates/trimStyle/v2/assets/media/team/card-img-3.png',
+      buttonText: 'See Stylist'
+    },
+    {
+      position: [-33.12224343572072, -64.34857867524579],
+      text: 'Pervieux Estilistas',
+      imageUrl: 'https://uiparadox.co.uk/templates/trimStyle/v2/assets/media/team/card-img-1.png',
+      buttonText: 'See Stylist'
+    },
+    {
+      position: [-33.121031896531846, -64.35848360992675],
+      text: 'Barbercoffe',
+      imageUrl: 'https://uiparadox.co.uk/templates/trimStyle/v2/assets/media/team/card-img-4.png',
+      buttonText: 'See Stylist'
+    },
   ];
+
+  // Función para abrir el modal
+  const openModal = (marker) => {
+    setModalContent(marker);
+    setModalIsOpen(true);
+  };
+
+  // Función para cerrar el modal
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   return (
     <div className='home'>
@@ -44,7 +79,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Referencia del mapa */}
       <h1 className='titulomap' ref={mapRef}>BARBER SHOP MAP</h1>
       <p className='descripcionmapa'>Search for your favorite hair salon from the map</p>
 
@@ -60,12 +94,32 @@ export default function Home() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           {markers.map((marker, index) => (
-            <Marker key={index} position={marker.position}>
-              <Popup>{marker.text}</Popup>
-            </Marker>
+            <Marker
+              key={index}
+              position={marker.position}
+              eventHandlers={{
+                click: () => openModal(marker)
+              }}
+            />
           ))}
         </MapContainer>
       </div>
+
+      // Modal
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="modal-content"
+        overlayClassName="modal-overlay"
+      >
+        <h2 className='titleStylist'>{modalContent.text}</h2>
+        {modalContent.imageUrl && <img src={modalContent.imageUrl} alt={modalContent.text} />}
+        <p>Information about {modalContent.text}... </p>
+        <Link to="/Stylist" className="modal-link">
+          {modalContent.buttonText}
+        </Link>
+      </Modal>
+
     </div>
   );
 }

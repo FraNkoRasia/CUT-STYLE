@@ -10,7 +10,7 @@
 
 .home:before {
     content: '';
-    background-image: url('/public/banner.avif');
+    background-image: url('/banner.avif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -127,6 +127,53 @@
     }
 }
 
+/* MODAL */
+.titleStylist{
+    text-align: center;
+    margin: 0 0 15px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.modal-overlay {
+    background-color: rgba(27, 27, 27, 0.5);
+    z-index: 2; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(181, 181, 181); /* Fondo del modal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px;
+    max-width: 350px;
+    
+  }
+  .modal-link {
+    padding: 10px 20px; /* Ajusta el relleno según tus necesidades */
+    background-color: #281dc5; /* Color de fondo */
+    color: white; /* Color del texto */
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none; /* Sin subrayado */
+    display: block; /* Para ocupar el espacio completo */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espaciado superior */
+  }
+  
+  .modal-link:hover {
+    background-color: #45a049; /* Color de fondo al pasar el mouse */
+  }
+  
+  
 
 @media (min-width: 640px) {
     .parrafo {
