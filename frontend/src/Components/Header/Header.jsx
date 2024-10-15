@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Header/Header.css';
 import { Link, useNavigate } from 'react-router-dom';
-import logoImage from '/logoNav-2.png';
+import logoImage from '/logoNav-2.webp';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);

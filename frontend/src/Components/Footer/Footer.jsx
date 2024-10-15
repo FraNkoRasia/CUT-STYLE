@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Footer/Footer.css';
 import { Link } from 'react-router-dom';
-import logoImage from '/logoNav-2.png';
+import logoImage from '/logoNav-2.webp';
 
 export default function Footer() {
     const handleScrollToTop = () => {

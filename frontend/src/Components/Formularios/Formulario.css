@@ -1,7 +1,7 @@
 .form-container {
     display: flex;
     content: '';
-    background-image: url('/banner.avif');
+    background-image: url('/banner.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

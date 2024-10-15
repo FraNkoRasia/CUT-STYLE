@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from '/FraNko-3.png';
-import Image2 from '/josafat.png';
-import Image3 from '/amin.png';
+import Image from '/FraNko-3.webp';
+import Image2 from '/josafat.webp';
+import Image3 from '/amin.webp';
 import '../About/About.css';
 import { ImGithub } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
@@ -14,7 +14,7 @@ export default function About() {
                 <div className="card">
                     <div className="cover">
                         <img src={Image3} alt="" />
-                        <div class="img__back"></div>
+                        <div className="img__back"></div>
                     </div>
                     <div className="description">
                         <h2>Amin Mirabelli</h2>
@@ -36,7 +36,7 @@ export default function About() {
                 <div className="card">
                     <div className="cover">
                         <img src={Image2} alt="" />
-                        <div class="img__back"></div>
+                        <div className="img__back"></div>
                     </div>
                     <div className="description">
                         <h2>Josafat Jimenez</h2>
@@ -57,7 +57,7 @@ export default function About() {
                 <div className="card">
                     <div className="cover">
                         <img src={Image} alt="" />
-                        <div class="img__back"></div>
+                        <div className="img__back"></div>
                     </div>
                     <div className="description">
                         <h2>Franco Rasia</h2>

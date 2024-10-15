@@ -1,6 +1,8 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import Modal from 'react-modal';
+
+
 import { Link } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import '../Home/Home.css';
@@ -35,20 +37,20 @@ export default function Home() {
   const markers = [
     {
       position: [-33.12233329038794, -64.35634635208058],
-      text: 'Barberqueen Peluqueria',
-      imageUrl: 'https://uiparadox.co.uk/templates/trimStyle/v2/assets/media/team/card-img-3.png',
+      text: 'Barberqueen Stylist',
+      imageUrl: '/peluquero1.webp',
       buttonText: 'See Stylist'
     },
     {
       position: [-33.12224343572072, -64.34857867524579],
-      text: 'Pervieux Estilistas',
-      imageUrl: 'https://uiparadox.co.uk/templates/trimStyle/v2/assets/media/team/card-img-1.png',
+      text: 'Pervieux Stylist',
+      imageUrl: 'peluquero2.webp',
       buttonText: 'See Stylist'
     },
     {
       position: [-33.121031896531846, -64.35848360992675],
-      text: 'Barbercoffe',
-      imageUrl: 'https://uiparadox.co.uk/templates/trimStyle/v2/assets/media/team/card-img-4.png',
+      text: 'Barbercoffe Stylist',
+      imageUrl: 'peluquero3.webp',
       buttonText: 'See Stylist'
     },
   ];
@@ -105,7 +107,7 @@ export default function Home() {
         </MapContainer>
       </div>
 
-      // Modal
+      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -113,11 +115,31 @@ export default function Home() {
         overlayClassName="modal-overlay"
       >
         <h2 className='titleStylist'>{modalContent.text}</h2>
-        {modalContent.imageUrl && <img src={modalContent.imageUrl} alt={modalContent.text} />}
-        <p>Information about {modalContent.text}... </p>
+        <div className='modalsin'>
+
+          <div className='infoStylist'>
+            <p>We provide hair cuts, hairstyles, coloring, straightening,
+              hair and scalp care treatments,
+              in addition to personalized advice for each type of hair,
+              with professional products that improve hair style and health.</p>
+          </div>
+
+          <img src={modalContent.imageUrl} alt={modalContent.text} />
+        </div>
+        
+        <p className='infoPeluca'>Visit us from:</p>
+
+        <div className='horarioDireccion'>
+          <p>🕑 Monday - Friday: 9 AM - 6 PM</p>
+          <p>📍 Fake Street 123, City, Country</p>
+        </div>
+
+
         <Link to="/Stylist" className="modal-link">
           {modalContent.buttonText}
         </Link>
+
+
       </Modal>
 
     </div>
