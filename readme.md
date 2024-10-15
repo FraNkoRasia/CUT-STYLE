@@ -3,25 +3,25 @@
 Gestión de Peluquerías - MVP
 Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la gestión de peluquerías. La aplicación permite a los dueños de peluquerías manejar las citas de sus clientes, administrar el personal, gestionar los servicios ofrecidos y visualizar reportes básicos sobre las operaciones diarias.
 
-Características principales
+## Características principales
 
--Gestión de citas: Permite a los clientes reservar citas con los estilistas disponibles en la peluquería.
+- Gestión de citas: Permite a los clientes reservar citas con los estilistas disponibles en la peluquería.
 
--Administración del personal: Permite al administrador añadir, editar o eliminar empleados.
+- Administración del personal: Permite al administrador añadir, editar o eliminar empleados.
 
--Gestión de servicios: Los administradores pueden gestionar los servicios ofrecidos, incluyendo precios y tiempos estimados.
+- Gestión de servicios: Los administradores pueden gestionar los servicios ofrecidos, incluyendo precios y tiempos estimados.
 
--Panel de reportes: Ofrece una visión básica de las citas y los ingresos generados.
+- Panel de reportes: Ofrece una visión básica de las citas y los ingresos generados.
 
--Notificaciones por correo electrónico: Envía recordatorios automáticos a los clientes para sus citas.
+- Notificaciones por correo electrónico: Envía recordatorios automáticos a los clientes para sus citas.
 
 Uso
 
-1.Administrar peluquería: Los administradores pueden gestionar las citas, el personal y los servicios.
+- Administrar peluquería: Los administradores pueden gestionar las citas, el personal y los servicios.
 
-2.Reservar citas: Los clientes pueden seleccionar un servicio y un estilista, y luego reservar una cita.
+- Reservar citas: Los clientes pueden seleccionar un servicio y un estilista, y luego reservar una cita.
 
-3.Panel de control: Los administradores pueden visualizar un resumen de las citas diarias, los ingresos generados y los empleados disponibles.
+- Panel de control: Los administradores pueden visualizar un resumen de las citas diarias, los ingresos generados y los empleados disponibles.
 
 ## Testing
 
@@ -29,8 +29,9 @@ Uso
 
 [Asignacion de Tareas](https://docs.google.com/spreadsheets/d/18w2gIcq4hrf0KqOoz_SdIUqFBN7WTaXRO4Si-27eXDk/edit?gid=0#gid=0)
 
-[Historias de Usuario-Casos de Prueba-Ejecuciones-Incidencias-Grafico Semana 1](https://docs.google.com/spreadsheets/d/1IeTGQxmWhDqV2Tqto9KcKhaz-luSz5x3/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true)
+[Historias de Usuario-Casos de Prueba-Ejecuciones-Incidencias-Grafico](https://docs.google.com/spreadsheets/d/1IeTGQxmWhDqV2Tqto9KcKhaz-luSz5x3/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true)
 
+[Planilla de Testing Exploratorio](https://docs.google.com/spreadsheets/d/1nJxGLKjVCeYYQzORKx69tH6SLHTqqoSA/edit?usp=sharing&ouid=107763075014786345298&rtpof=true&sd=true)
 
 ## Roles del equipo
 
