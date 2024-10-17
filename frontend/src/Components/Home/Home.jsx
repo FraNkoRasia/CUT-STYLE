@@ -1,9 +1,8 @@
 import { useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import Modal from 'react-modal';
-
-
-import { Link } from 'react-router-dom';
+import Boton from '../Boton/Boton';
+import { useNavigate } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import '../Home/Home.css';
 
@@ -25,7 +24,12 @@ export default function Home() {
   // Estado para el modal
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState({});
+  const navigate = useNavigate();  // Hook para navegación
 
+  // Función para navegar a la página del estilista
+  const handleNavigateToStylist = () => {
+    navigate('/barbershop');
+  };
   // Función para deslizar hasta el mapa
   const handleScrollToMap = () => {
     if (mapRef.current) {
@@ -39,19 +43,19 @@ export default function Home() {
       position: [-33.12233329038794, -64.35634635208058],
       text: 'Barberqueen Stylist',
       imageUrl: '/peluquero1.webp',
-      buttonText: 'See Stylist'
+      buttonText: 'See Barbershop'
     },
     {
       position: [-33.12224343572072, -64.34857867524579],
       text: 'Pervieux Stylist',
       imageUrl: 'peluquero2.webp',
-      buttonText: 'See Stylist'
+      buttonText: 'See Barbershop'
     },
     {
       position: [-33.121031896531846, -64.35848360992675],
       text: 'Barbercoffe Stylist',
       imageUrl: 'peluquero3.webp',
-      buttonText: 'See Stylist'
+      buttonText: 'See Barbershop'
     },
   ];
 
@@ -74,15 +78,18 @@ export default function Home() {
           <h1 className='parrafo2'>CUT & STYLE</h1>
           <h1 className='parrafo3'>YOU</h1>
           <p className='parrafo4'>
-            At Trim & Style, we are dedicated to providing exceptional grooming and styling services tailored to your unique preferences. Let’s go!
+            At Cut & Style, we are dedicated to providing exceptional grooming and styling services tailored to your unique preferences. Let’s go!
           </p>
 
-          <button className='botonhome' onClick={handleScrollToMap}>Barber Map</button>
+          <div className="contenedor-izquierda">
+            <Boton texto="Barber Map" onClick={handleScrollToMap} className="boton" />
+          </div>
+
         </div>
       </div>
 
-      <h1 className='titulomap' ref={mapRef}>BARBER SHOP MAP</h1>
-      <p className='descripcionmapa'>Search for your favorite hair salon from the map</p>
+      <h1 className='titulomap' ref={mapRef}>FIND YOUR BARBERSHOP</h1>
+      <p className='descripcionmapa'>Find your favorite barbershop on the map</p>
 
       <div className="map-container">
         <MapContainer
@@ -107,7 +114,7 @@ export default function Home() {
         </MapContainer>
       </div>
 
-      
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -126,7 +133,7 @@ export default function Home() {
 
           <img src={modalContent.imageUrl} alt={modalContent.text} />
         </div>
-        
+
         <p className='infoPeluca'>Visit us from:</p>
 
         <div className='horarioDireccion'>
@@ -134,11 +141,7 @@ export default function Home() {
           <p>📍 Fake Street 123, City, Country</p>
         </div>
 
-
-        <Link to="/Stylist" className="modal-link">
-          {modalContent.buttonText}
-        </Link>
-
+        <Boton texto={modalContent.buttonText} onClick={handleNavigateToStylist} className="boton" />
 
       </Modal>
 

@@ -70,8 +70,6 @@
 
     .contenido {
 
-
-
         .parrafo1 {
             font-size: clamp(14px, 4.325vw, 15px);
             color: white;
@@ -82,7 +80,6 @@
             font-size: clamp(28px, 7.556vw, 42px);
             color: #FAFAFA;
             font-weight: 750;
-
         }
 
         .parrafo3 {
@@ -101,29 +98,6 @@
             margin: 0 0 24px;
             max-width: 400px;
         }
-
-        .botonhome {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            width: 200px;
-            padding: 10px 20px;
-            cursor: pointer;
-            letter-spacing: 0.2px;
-            border: 2px solid #E96E1D;
-            font-weight: 700;
-            font-family: "Montserrat", sans-serif;
-            background-color: #212020;
-            color: #FAFAFA;
-
-        }
-
-        .botonhome:hover {
-            background-color: #E96E1D;
-            color: #FFFFFF;
-            transition: background-color 0.8s ease;
-        }
-
     }
 }
 
@@ -151,7 +125,6 @@
 
 .infoStylist p {
     font-size: 13px;
-
 }
 
 .infoPeluca {
@@ -187,26 +160,6 @@
     color: white;
 }
 
-.modal-link {
-    padding: 10px 20px;
-    background-color: #281dc5;
-    color: white;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 30px 10px #000000b2;
-    width: 130px;
-    margin: 15px auto 0;
-}
-
-.modal-link:hover {
-    background-color: #45a049;
-}
-
-
-
 @media (min-width: 640px) {
     .parrafo {
         display: flex;
@@ -223,6 +176,7 @@
     .parrafo .contenido .parrafo1 {
         font-size: 16px;
     }
+
     .infoStylist p {
         font-size: 16px;
     }

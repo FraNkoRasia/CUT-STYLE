@@ -6,7 +6,7 @@ import Login from './Components/Formularios/Login';
 import Register from './Components/Formularios/Register';
 import RegisterStylist from './Components/Formularios/RegisterStylist';
 import About from './Components/About/About';
-import Stylist from './Components/Stylist/Stylist';
+import BarberShop from './Components/BarberShop/BarberShop';
 import Footer from './Components/Footer/Footer';
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/registerstylist" element={<RegisterStylist />} />
-        <Route path="/Stylist" element={<Stylist />} />
+        <Route path="/registerbarber" element={<RegisterStylist />} />
+        <Route path="/barbershop" element={<BarberShop />} />
         <Route path="/about" element={<About />} />
       </Routes>
 

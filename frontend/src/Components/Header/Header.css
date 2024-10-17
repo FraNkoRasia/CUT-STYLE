@@ -18,7 +18,7 @@ nav {
     box-shadow: inset 0px 0px 30px 10px #000000b2;
 }
 
-ul {
+.ul {
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -28,6 +28,8 @@ ul {
     display: block;
     opacity: 1;
     box-shadow: inset 0px 0px 30px 10px #000000b2;
+    width: 100%;
+    max-width: 250px;
 }
 
 .logo {
@@ -39,7 +41,7 @@ ul {
 }
 
 .logo img {
-    width: 130px;
+    width: 170px;
 }
 
 .hamburguesita {

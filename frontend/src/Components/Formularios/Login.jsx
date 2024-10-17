@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import { conexionApi } from '../Modules/conexionApi';
 import auth from '../Modules/auth';
+import Boton from '../Boton/Boton';
 import '../Formularios/Formulario.css';
 
 const Login = () => {
@@ -79,7 +80,7 @@ const Login = () => {
                     <input id="email" name="email" type="email" placeholder="example@example.com" value={formData.email} onChange={handleChange} required />
                     <label htmlFor="password">Contraseña</label>
                     <input id="password" name="password" type="password" placeholder="Ingrese su contraseña" value={formData.password} onChange={handleChange} required />
-                    <button type="submit">Login</button>
+                    <Boton texto="Login" className="boton" />
                     <Link to="/forgot-password" className='olvidaste'>¿Olvidaste tu contraseña?</Link>
                     {showMessage && <p className={`mensaje ${messageType}`}>{message}</p>}
                 </form>

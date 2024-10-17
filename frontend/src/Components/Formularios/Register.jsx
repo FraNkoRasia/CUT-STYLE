@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { conexionApi } from '../Modules/conexionApi';
+import Boton from '../Boton/Boton';
 import '../Formularios/Formulario.css';
 
 const Register = () => {
@@ -82,7 +83,7 @@ const Register = () => {
                         <label htmlFor="tyc"> I accept terms and conditions</label>
                     </div>
                     <p style={{ color: 'white' }}>All fields are required</p>
-                    <button type="submit">Register</button>
+                    <Boton texto="Register" className="boton" />
                     {showMessage && <p className={`mensaje ${messageType}`}>{message}</p>}
                 </form>
             </section>
