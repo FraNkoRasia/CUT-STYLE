@@ -39,7 +39,7 @@ Uso
 | ---- | --------- | ----------- |
 | P. Manager  | `Amin` | Trello, Google sheets y docs |
 | Designer | `Franko` | Inspiracion en diseños |
-| Frontend | `Franko` | React, javascript, css |
+| Frontend | `Franko` `Emanuel` | React, javascript, css |
 | Backend | `Josafat` | Express, Typescript, Node, JWT |
 | Testing | `Amin` | Google sheets, Excel |
 | Database | `Josafat` | PostgresSQL |
