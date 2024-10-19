@@ -144,6 +144,25 @@ nav {
     .logo img {
         width: 180px;
     }
+      .hamburguesita {
+        display: none;
+    }
+
+    .ul {
+        display: flex;
+        opacity: 1; 
+        position: static; 
+        background: none; 
+        width: auto; 
+        box-shadow: none; 
+        padding: 0; 
+        margin: auto 0;
+    }
+
+    .ul li {
+        margin: 0 15px; 
+        font-size: 18px; 
+    }
 }
 
 @media (min-width: 1024px) {

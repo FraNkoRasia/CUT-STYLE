@@ -190,6 +190,10 @@
     .parrafo .contenido .parrafo3 {
         font-size: clamp(90px, 7.135vw, 180px);
     }
+
+    .leaflet-map {
+        width: 80%;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -200,11 +204,17 @@
     .parrafo .contenido .parrafo4 {
         font-size: 17px;
     }
+    .leaflet-map {
+        width: 70%;
+    }
 }
 
 @media (min-width: 1280px) {
     .parrafo .contenido .parrafo2 {
         font-size: clamp(48px, 5.273vw, 64px);
+    }
+    .leaflet-map {
+        width: 60%;
     }
 }
 

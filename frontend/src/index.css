@@ -40,9 +40,9 @@ body,
   flex-direction: column;
   margin: 0;
   color: rgb(0, 0, 0);
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Exo', sans-serif;
   scroll-behavior: smooth;
-
+  letter-spacing: 0.48px;
  }
 
 ol, ul {

@@ -10,6 +10,14 @@ export default function About() {
     return (
         <div className="about-container">
             <div className='card-container'>
+                <h1>CUT & <span>STYLE</span></h1>
+                <h2>
+                    En esta <span>simulación laboral</span>  de No-Country, desarrollamos una página
+                    web enfocada en ofrecer servicios de barbería. Utilizando <span>Node.js </span>
+                    para el backend y <span>React</span> con Vite para el frontend, creamos una
+                    plataforma eficiente y moderna. El objetivo es facilitar la conexión
+                    entre clientes y barberías, permitiendo gestionar citas, servicios
+                    y perfiles de manera rápida e intuitiva.</h2>
                 {/* Card 1 */}
                 <div className="card">
                     <div className="cover">
@@ -61,12 +69,12 @@ export default function About() {
                     </div>
                     <div className="description">
                         <h2>Franco Rasia</h2>
-                        <p className='roldev'>FULLSTACK DEVELOPER</p>
+                        <p className='roldev'>FRONTEND DEVELOPER</p>
                         <p className='desc'>
-                            Desarrollador versátil con habilidades en frontend y backend.
-                            Crea aplicaciones completas, desde interfaces interactivas
-                            hasta la gestión de bases de datos, asegurando soluciones
-                            integrales y eficientes.</p>
+                            Desarrollador especializado en la creación de interfaces
+                            atractivas y funcionales. Experto en tecnologías modernas
+                            como React y CSS, enfocado en ofrecer experiencias de usuario
+                            intuitivas y eficientes.</p>
                         <div>
                             <a className='iconogithub' href="https://github.com/FraNkoRasia?tab=repositories"><ImGithub size={40} /></a>
                             <a className='iconolinkedin' href="https://www.linkedin.com/in/francorasia/"><FaLinkedin size={40} /></a>

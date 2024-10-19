@@ -16,21 +16,40 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: stretch;
-    /* Esto asegura que todas las cartas tengan la misma altura */
-    width: 90%;
+      width: 90%;
     margin: 0 auto 5rem;
+}
+
+.card-container h1 {
+    width: 90%;
+    text-align: center;
+    margin: 25px 0;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Exo', sans-serif;
+    color: white;
+
+}
+
+.card-container h2 {
+    width: 90%;
+    margin: 20px auto;
+    color: white;
+    font-size: 14px;
+}
+
+.card-container span {
+    color: #E96E1D;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Distribuye el contenido entre la parte superior y la inferior */
     width: 290px;
     margin: 10px;
     transition: all 300ms;
     flex-grow: 1;
-    /* Permite que las tarjetas se estiren al mismo tamaño */
 }
 
 .card .cover {
@@ -76,8 +95,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Asegura que los íconos estén abajo */
-    flex-grow: 1;
+     flex-grow: 1;
     max-width: 280px;
     margin: auto;
     font-family: "Monserrat", sans-serif;
@@ -89,7 +107,6 @@
     justify-content: center;
     gap: 3rem;
     margin-top: auto;
-    /* Asegura que el contenedor de íconos esté al final */
     margin: 15px 0 0;
 }
 
@@ -97,7 +114,7 @@
     margin-top: 1rem;
     font-weight: bold;
     text-align: center;
-    font-size: 30px;
+    font-size: 27px;
     filter: drop-shadow(10px 10px 2px rgb(0, 0, 0));
     transition: transform 0.4s ease;
 }
@@ -109,10 +126,8 @@
 .card .description .desc {
     font-size: 13px;
     line-height: 1.5;
-    /* Mejora la distribución del texto */
-    text-align: justify;
-    /* Ajusta el texto a ambos lados del contenedor */
-}
+     text-align: justify;
+   }
 
 .roldev {
     text-align: center;
@@ -138,6 +153,13 @@
 
 @media (min-width: 768px) {
     .card .description .desc {
+        font-size: 16px;
+    }
+
+    .card-container h1 {
+        font-size: 50px;
+    }
+    .card-container h2 {
         font-size: 16px;
     }
 }

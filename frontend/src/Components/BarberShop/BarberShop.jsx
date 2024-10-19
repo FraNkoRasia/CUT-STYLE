@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../BarberShop/BarberShop.css'
 import Boton from '../Boton/Boton'
 import estilo1 from '/estilo1.webp'
@@ -7,8 +7,71 @@ import estilo3 from '/estilo3.webp'
 import estilo4 from '/estilo4.webp'
 
 export default function BarberShop() {
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+    };
+
     return (
         <main className='barbershop-container'>
+            {showModal && (
+                <div className="modal-over">
+                    <div className="modal ">
+                        <button className="close-modal" onClick={closeModal}>✖</button> {/* Botón de cierre */}
+                        <h2>APPOINTMENT FORM</h2>
+                        <form>
+                            <div className="modalForm-row">
+                                <label>
+                                    Your Name
+                                    <input type="text" name="name" placeholder='Enter your name' required />
+                                </label>
+                                <label>
+                                    Email
+                                    <input type="email" name="email" placeholder='Enter your email' required />
+                                </label>
+                            </div>
+                            <div className="modalForm-row">
+                                <label>
+                                    Phone Number
+                                    <input type="tel" name="phone" placeholder='Enter your Phone' required />
+                                </label>
+                                <label>
+                                    Date
+                                    <input type="date" name="appointmentDate" required />
+                                </label>
+                            </div>
+                            <div className="modalForm-row">
+                                <label>
+                                    Select Service
+                                    <select name="service" required>
+                                        <option value="hairstyling">Hair Styling</option>
+                                        <option value="haircut">Hair Cut</option>
+                                        <option value="beardtrim">Beard Trim</option>
+                                        <option value="hairwash">Hair Wash</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Select Barber
+                                    <select name="barber" required>
+                                        <option value="barber1">Barber 1</option>
+                                        <option value="barber2">Barber 2</option>
+                                        <option value="barber3">Barber 3</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div className="modal-buttons">
+                                <button type="submit" className="boton custom-class">Book Appointment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
+
             <div className="banner-container">
                 <img className="bannerPeluqueria" src="" alt="" />
                 <h1 className="servicesTitle">SERVICES</h1>
@@ -35,7 +98,7 @@ export default function BarberShop() {
                                 <li>Trendy and Versatile</li>
                                 <li>Finishing Touches</li>
                             </ul>
-                            <Boton texto="Book Appointment" className="boton custom-class" />
+                            <Boton texto="Book Appointment" className="boton custom-class" onClick={openModal} />
 
                         </div>
                     </div>
@@ -58,7 +121,7 @@ export default function BarberShop() {
                                 <li>Clean and Precise</li>
                                 <li>Refresh and Transform</li>
                             </ul>
-                            <Boton texto="Book Appointment" className="boton custom-class" />
+                            <Boton texto="Book Appointment" className="boton custom-class" onClick={openModal} />
                         </div>
                     </div>
 
@@ -80,7 +143,7 @@ export default function BarberShop() {
                                 <li>Grooming and Maintenance</li>
                                 <li>Personalized Advice</li>
                             </ul>
-                            <Boton texto="Book Appointment" className="boton custom-class" />
+                            <Boton texto="Book Appointment" className="boton custom-class" onClick={openModal} />
                         </div>
                     </div>
 
@@ -101,7 +164,7 @@ export default function BarberShop() {
                                 <li>Relaxation and Rejuvenation</li>
                                 <li>Healthy Hair Care</li>
                             </ul>
-                            <Boton texto="Book Appointment" className="boton custom-class" />
+                            <Boton texto="Book Appointment" className="boton custom-class" onClick={openModal} />
                         </div>
                     </div>
                 </div>
