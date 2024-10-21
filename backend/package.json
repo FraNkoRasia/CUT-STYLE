@@ -10,7 +10,7 @@
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\"",
     "build": "yarn run test && rimraf ./dist && tsc",
-    "production": "npm run test && rimraf ./dist && tsc"
+    "production": "rimraf ./dist && tsc"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
