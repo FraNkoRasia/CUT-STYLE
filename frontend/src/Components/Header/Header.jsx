@@ -7,6 +7,7 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userRole, setUserRole] = useState(null);
+    const [activeItem, setActiveItem] = useState(null); // Estado para el item activo
     const menuRef = useRef(null);
     const hamburguesaRef = useRef(null);
     const navigate = useNavigate();
@@ -24,8 +25,9 @@ export default function Header() {
         checkAuthStatus();
     }, []);
 
-    const handleMenuClick = (path) => {
+    const handleMenuClick = (path, index) => {
         setMenuOpen(false);
+        setActiveItem(index); // Actualiza el item activo
         navigate(path);
     };
 
@@ -36,7 +38,6 @@ export default function Header() {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // Si el clic no está en el menú ni en el botón de hamburguesa
             if (
                 menuRef.current &&
                 !menuRef.current.contains(event.target) &&
@@ -73,15 +74,35 @@ export default function Header() {
                     </label>
 
                     <ul
-                        ref={menuRef} // Ref al menú
+                        ref={menuRef}
                         className={`ul ${menuOpen ? 'open' : ''}`}
                     >
                         {!isLoggedIn && (
                             <>
-                                <li><Link to="/" onClick={() => handleMenuClick('/')}>Home</Link></li>
-                                <li><Link to="/register" onClick={() => handleMenuClick('/register')}>User Register </Link></li>
-                                <li><Link to="/registerbarber" onClick={() => handleMenuClick('/registerbarber')}>Barber Register</Link></li>
-                                <li><Link to="/login" onClick={() => handleMenuClick('/login')}>Login</Link></li>
+                                <li
+                                    className={activeItem === 0 ? 'active' : ''}
+                                    onClick={() => handleMenuClick('/', 0)}
+                                >
+                                    <Link to="/">Home</Link>
+                                </li>
+                                <li
+                                    className={activeItem === 1 ? 'active' : ''}
+                                    onClick={() => handleMenuClick('/register', 1)}
+                                >
+                                    <Link to="/register">User Register</Link>
+                                </li>
+                                <li
+                                    className={activeItem === 2 ? 'active' : ''}
+                                    onClick={() => handleMenuClick('/registerbarber', 2)}
+                                >
+                                    <Link to="/registerbarber">Barber Register</Link>
+                                </li>
+                                <li
+                                    className={activeItem === 3 ? 'active' : ''}
+                                    onClick={() => handleMenuClick('/login', 3)}
+                                >
+                                    <Link to="/login">Login</Link>
+                                </li>
                             </>
                         )}
                         {isLoggedIn && userRole === 'Administrador' && (

@@ -71,7 +71,7 @@ export default function Home() {
 
     return (
         <div className='home'>
-            <div className='parrafo'>
+            <div className='banner-container'>
                 <div className='contenido'>
                     <h1 className='parrafo1'>WE ARE HERE</h1>
                     <h1 className='parrafo2'>CUT & STYLE</h1>

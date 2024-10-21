@@ -123,11 +123,14 @@ nav {
 }
 
 .ul li:hover {
-    font-weight: 700;
+    font-weight: 400;
     color: #E96E1D;
 }
 
-
+.ul li.active {
+    font-weight: 700;
+    color: #E96E1D;
+}
 
 @media (min-width: 640px) {
     .logo img {
@@ -144,24 +147,25 @@ nav {
     .logo img {
         width: 180px;
     }
-      .hamburguesita {
+
+    .hamburguesita {
         display: none;
     }
 
     .ul {
         display: flex;
-        opacity: 1; 
-        position: static; 
-        background: none; 
-        width: auto; 
-        box-shadow: none; 
-        padding: 0; 
+        opacity: 1;
+        position: static;
+        background: none;
+        width: auto;
+        box-shadow: none;
+        padding: 0;
         margin: auto 0;
     }
 
     .ul li {
-        margin: 0 15px; 
-        font-size: 18px; 
+        margin: 0 15px;
+        font-size: 18px;
     }
 }
 
