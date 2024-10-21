@@ -1,0 +1,218 @@
+.barbershop-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #2C2D2F !important;
+    color: white;
+}
+
+.banner-container {
+    position: relative;
+    text-align: center;
+}
+
+.bannerPeluqueria {
+    display: block;
+    height: auto;
+}
+
+.servicesTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.bannerPeluqueria {
+    background-image: url('/bannerPeluqueria.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: clamp(350px, 26.042vw, 650px);
+}
+
+
+.barbershop-container section {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px 12px;
+
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+}
+
+.servicio img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    max-width: 450px;
+    margin: 25px 0;
+}
+
+.servicio .tarjetas {
+    margin: 0 0 25px;
+}
+
+.tarjetas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.servicio h1 {
+    font-size: 22px;
+    font-family: "Exo", sans-serif;
+    font-weight: 700;
+    margin: 0 0 32px;
+}
+
+.servicio p {
+    font-family: "Montserrat", sans-serif;
+    color: #AFB1B6;
+    margin: 0 0 24px;
+}
+
+.servicio ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.servicio li {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+}
+
+.custom-class {
+    width: 100%;
+    max-width: 220px;
+}
+
+/* MODAL */
+.modal-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #0D0D0D;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 80px rgba(222, 104, 1, 0.3);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: "Exo", sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3.493vw, 25px);
+}
+
+.modalForm-row input,
+select {
+    margin-bottom: 1rem;
+}
+
+.modalForm-row label {
+    color: #bbb;
+    margin-bottom: 0.5rem;
+}
+
+
+.modalForm-row input,
+.modalForm-row select {
+    background-color: #333;
+    border: none;
+    padding: 0.5rem;
+    color: #fff;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.modalForm-row input:focus,
+.modalForm-row select:focus {
+    outline: none;
+    border: 1px solid #ffa500;
+}
+
+@media (min-width: 500px) {
+    .modalForm-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .modalForm-row label {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        color: #bbb;
+    }
+}
+
+@media (min-width: 1024px) {
+    .barbershop-container section {
+        max-width: 1380px;
+    }
+
+    .servicio {
+        margin: 0 32.5px;
+    }
+
+    .contenedorTarjetas {
+        display: flex;
+        gap: 20px;
+    }
+
+    .servicio h1 {
+        margin: 25px 0 0;
+        margin-bottom: clamp(32px, 3.33vw, 90px);
+        font-size: clamp(27px, 3.225vw, 36px);
+    }
+
+    .modalForm-container h2 {
+        font-size: clamp(24px, 3.493vw, 28px);
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+    .modalForm-container h2 {
+        font-size: clamp(27px, 3.225vw, 36px);
+    }
+}
