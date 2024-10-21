@@ -7,7 +7,7 @@ import barbershopRoutes from './routes/barbershop.routes';
 dotenv.config();
 
 const app: Application = express();
-const port = process.env.APP_PORT || 3000;
+const port = process.env.APP_PORT || 8000;
 
 
 app.use(bodyParser.json());
