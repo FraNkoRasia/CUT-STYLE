@@ -81,6 +81,7 @@ export default function Header() {
                                 <li><Link to="/" onClick={() => handleMenuClick('/')}>Home</Link></li>
                                 <li><Link to="/register" onClick={() => handleMenuClick('/register')}>User Register </Link></li>
                                 <li><Link to="/registerbarber" onClick={() => handleMenuClick('/registerbarber')}>Barber Register</Link></li>
+                                <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My turn</Link></li>
                                 <li><Link to="/login" onClick={() => handleMenuClick('/login')}>Login</Link></li>
                             </>
                         )}
