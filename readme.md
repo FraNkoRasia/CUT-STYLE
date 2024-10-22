@@ -38,7 +38,7 @@ Uso
 | ROl  | Encargado | Tecnologias |
 | ---- | --------- | ----------- |
 | P. Manager  | `Amin` | Trello, Google sheets y docs |
-| Designer | `Franko` | Inspiracion en diseños |
+| Designer | `Franko` `Emanuel` | Inspiracion en diseños |
 | Frontend | `Franko` `Emanuel` | React, javascript, css |
 | Backend | `Josafat` | Express, Typescript, Node, JWT |
 | Testing | `Amin` | Google sheets, Excel |

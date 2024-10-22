@@ -1,4 +1,3 @@
-import { Barbershop } from "@prisma/client";
 import { prisma } from "../data/postgres";
 import { CreateBarbershopDTO, IBarbershop, UpdateBarbershopDTO } from "../interfaces/barbershop.interface";
 

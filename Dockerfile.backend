@@ -1,0 +1,10 @@
+FROM node:18
+WORKDIR /app
+COPY backend/package*.json ./
+RUN npm install
+COPY backend/ ./
+RUN npx prisma generate
+RUN npm run production
+EXPOSE 9000
+
+CMD ["npm", "start"]

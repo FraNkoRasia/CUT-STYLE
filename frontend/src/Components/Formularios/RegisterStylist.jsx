@@ -68,8 +68,8 @@ export default function RegisterStylist() {
                     <label htmlFor="name">Name</label>
                     <input id="name" name="name" type="text" placeholder="Name" value={formData.name} onChange={handleChange} required />
 
-                    <label htmlFor="location">Location</label>
-                    <input id="location" name="location" type="text" placeholder="Location" value={formData.location} onChange={handleChange} required />
+                    <label htmlFor="location">Address</label>
+                    <input id="location" name="location" type="text" placeholder="Address" value={formData.location} onChange={handleChange} required />
 
                     <label htmlFor="coordinates">Coordinates</label>
                     <input id="coordinates" name="coordinates" type="text" placeholder="Coordinates (e.g., 40.7128, -74.0060)" value={formData.coordinates} onChange={handleChange} required />
