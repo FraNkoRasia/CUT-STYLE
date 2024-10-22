@@ -16,6 +16,21 @@ export class BarbershopController {
         }
     }
 
+    /**
+ * @swagger
+ * /barbershops:
+ *   get:
+ *     summary: Get all barbershops
+ *     responses:
+ *       200:
+ *         description: List of all barbershops
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: 'backend/src/interfaces/barbershop.interface'
+ */
     static async getAll(req: Request, res: Response): Promise<void> {
         try {
             const barbershops = await BarberShopService.getBarbershops();
