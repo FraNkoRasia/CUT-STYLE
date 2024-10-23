@@ -32,7 +32,6 @@
 
 .turno-container th, 
 .turno-container td {
-    
     padding: 15px; 
     text-align: left;
   
@@ -43,6 +42,9 @@
     color: #AFB1B6;
     font-weight: bold;
     text-align: center;
+    margin: 0 10px;
+    box-shadow: inset 0px 0px 15px #000;
+    filter: drop-shadow(5px 5px 20px rgb(0, 0, 0));
 }
 
 .turno-container tbody tr:hover {
