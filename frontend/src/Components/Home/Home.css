@@ -240,7 +240,8 @@
 
 
 .img-gallery {
-    width: 800px; 
+    width: 100%; 
+    max-width: 800px; 
     margin: 10px auto; 
     padding: 50px 0; 
     display: grid; 
@@ -256,9 +257,22 @@
     object-fit: cover; 
 }
 
-.contGalery{
+@media (max-width: 800px) {
+    .img-gallery {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 500px) {
+    .img-gallery {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.contGalery {
     background-image: url('/fondoabout.webp');
 }
+
 #img4 {
     grid-column: span 3; 
     grid-row: span 1; 
@@ -267,13 +281,10 @@
 #img2 {
     grid-column: span 2; 
     grid-row: span 1; 
-    height: 390px;
+    height: 390px; 
 }
- h1{
-    
-    font-family: "Exo";
+
+h1 {
     text-align: center;
     color: #E96E1D;
- }
-
-
+}
