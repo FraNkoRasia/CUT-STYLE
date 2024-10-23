@@ -7,6 +7,7 @@ import Register from './Components/Formularios/Register';
 import RegisterStylist from './Components/Formularios/RegisterStylist';
 import About from './Components/About/About';
 import BarberShop from './Components/BarberShop/BarberShop';
+import Turno from './Components/MyTurn/Turno';
 import Footer from './Components/Footer/Footer';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/registerbarber" element={<RegisterStylist />} />
         <Route path="/barbershop" element={<BarberShop />} />
         <Route path="/about" element={<About />} />
+        <Route path="/turno" element={<Turno />} />
       </Routes>
 
       <Footer />
