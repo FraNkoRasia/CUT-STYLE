@@ -79,30 +79,11 @@ export default function Header() {
                     >
                         {!isLoggedIn && (
                             <>
-                                <li
-                                    className={activeItem === 0 ? 'active' : ''}
-                                    onClick={() => handleMenuClick('/', 0)}
-                                >
-                                    <Link to="/">Home</Link>
-                                </li>
-                                <li
-                                    className={activeItem === 1 ? 'active' : ''}
-                                    onClick={() => handleMenuClick('/register', 1)}
-                                >
-                                    <Link to="/register">User Register</Link>
-                                </li>
-                                <li
-                                    className={activeItem === 2 ? 'active' : ''}
-                                    onClick={() => handleMenuClick('/registerbarber', 2)}
-                                >
-                                    <Link to="/registerbarber">Barber Register</Link>
-                                </li>
-                                <li
-                                    className={activeItem === 3 ? 'active' : ''}
-                                    onClick={() => handleMenuClick('/login', 3)}
-                                >
-                                    <Link to="/login">Login</Link>
-                                </li>
+                                <li><Link to="/" onClick={() => handleMenuClick('/')}>Home</Link></li>
+                                <li><Link to="/register" onClick={() => handleMenuClick('/register')}>User Register </Link></li>
+                                <li><Link to="/registerbarber" onClick={() => handleMenuClick('/registerbarber')}>Barber Register</Link></li>
+                                <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
+                                <li><Link to="/login" onClick={() => handleMenuClick('/login')}>Login</Link></li>
                             </>
                         )}
                         {isLoggedIn && userRole === 'Administrador' && (

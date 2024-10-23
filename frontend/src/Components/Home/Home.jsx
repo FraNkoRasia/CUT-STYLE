@@ -15,7 +15,7 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-export default function Home() {
+export default function Home() { 
     const mapRef = useRef(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalContent, setModalContent] = useState({});
@@ -141,6 +141,21 @@ export default function Home() {
                     handleScrollToTop(); // Scroll to top after navigation
                 }} className="boton" />
             </Modal>
+
+            <div className="contGalery">
+            <h2 className='titulomap'>The Best Styles</h2>
+                <figure className="img-gallery">
+
+                    <img id="img1" src="/estilo5.webp" alt="Estilo 5" />
+                    <img id="img2" src="/estilo2.webp" alt="Estilo 2" />
+                    <img src="/estilo3.webp" alt="Estilo 3" />
+                    <img src="/estilo4.webp" alt="Estilo 4" />
+                    <img src="/estilo1.webp" alt="Estilo 1" />
+                    <img id="img4" src="/bannerPeluqueria.webp" alt="Banner Peluquería" />
+
+                </figure>
+            </div>
+
         </div>
     );
 }

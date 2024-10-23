@@ -183,6 +183,7 @@
     .infoStylist p {
         font-size: 16px;
     }
+
 }
 
 @media (min-width: 768px) {
@@ -197,6 +198,7 @@
     .leaflet-map {
         width: 80%;
     }
+
 }
 
 @media (min-width: 1024px) {
@@ -236,4 +238,55 @@
         font-size: clamp(60px, 4.167vw, 135px);
     }
 
+}
+
+
+.img-gallery {
+    width: 100%; 
+    max-width: 800px; 
+    margin: 10px auto; 
+    padding: 50px 0; 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+}
+
+.img-gallery img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.788);
+    object-fit: cover; 
+}
+
+@media (max-width: 500px) {
+    .img-gallery {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (min-width: 524px) {
+   #img1{
+    height: 390px;
+   }
+}
+
+.contGalery {
+    background-image: url('/fondoabout.webp');
+}
+
+#img4 {
+    grid-column: span 3; 
+    grid-row: span 1; 
+}
+
+#img2 {
+    grid-column: span 2; 
+    grid-row: span 1; 
+    height: 390px; 
+}
+
+h1 {
+    text-align: center;
+    color: #E96E1D;
 }
