@@ -6,7 +6,7 @@ import cors from "cors";
 import { setupSwagger } from "./configs/swagger.config";
 
 import barbershopRoutes from "./routes/barbershop.routes";
-import authRouter from "./routes/auth.routes";
+// import authRouter from "./routes/auth.routes";
 import AppointmentRouter from "./routes/appointment.routes";
 
 dotenv.config();
@@ -29,7 +29,7 @@ app.get("/ping", (req: Request, res: Response) => {
 
 app.use("/api/v1", barbershopRoutes);
 app.use("/api/v1", AppointmentRouter);
-app.use("/api/v1/auth", authRouter);
+// app.use("/api/v1/auth", authRouter);
 
 setupSwagger(app);
 
