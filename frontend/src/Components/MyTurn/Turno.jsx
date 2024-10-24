@@ -13,9 +13,9 @@ export default function Turno() {
             <table>
                 <thead>
                     <tr>
-                        <th>Nombre de Usuario</th>
+                        <th>Usuario</th>
                         <th>Barbería</th>
-                        <th>Fecha y hora</th>
+                        <th>Turno</th>
                         <th>Servicio</th>
                     </tr>
                 </thead>

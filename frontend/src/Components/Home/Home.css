@@ -163,6 +163,48 @@
     color: white;
 }
 
+/* GALLERY */
+
+.img-gallery {
+    margin: 0px auto;
+    padding: 30px 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.img-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.788);
+    object-fit: cover;
+}
+
+@media (max-width: 500px) {
+    .img-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 500px) {
+    #img1 {
+        height: 390px;
+    }
+
+}
+
+#img4 {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+#img2 {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 390px;
+}
+
 @media (min-width: 640px) {
     .banner-container {
         display: flex;
@@ -195,10 +237,10 @@
         font-size: clamp(90px, 7.135vw, 180px);
     }
 
-    .leaflet-map {
+    .leaflet-map,
+    .img-gallery {
         width: 80%;
     }
-
 }
 
 @media (min-width: 1024px) {
@@ -210,9 +252,11 @@
         font-size: 17px;
     }
 
-    .leaflet-map {
+    .leaflet-map,
+    .img-gallery {
         width: 70%;
     }
+
 }
 
 @media (min-width: 1280px) {
@@ -220,7 +264,8 @@
         font-size: clamp(48px, 5.273vw, 64px);
     }
 
-    .leaflet-map {
+    .leaflet-map,
+    .img-gallery {
         width: 60%;
     }
 }
@@ -238,55 +283,4 @@
         font-size: clamp(60px, 4.167vw, 135px);
     }
 
-}
-
-
-.img-gallery {
-    width: 100%; 
-    max-width: 800px; 
-    margin: 0px auto; 
-    padding: 30px 30px; 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 10px; 
-}
-
-.img-gallery img {
-    width: 100%; 
-    height: auto; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.788);
-    object-fit: cover; 
-}
-
-@media (max-width: 500px) {
-    .img-gallery {
-        grid-template-columns: 1fr; 
-    }
-}
-
-@media (min-width: 500px) {
-   #img1{
-    height: 390px;
-   }
-}
-
-.contGalery {
-    background-image: url('/fondoabout.webp');
-}
-
-#img4 {
-    grid-column: span 3; 
-    grid-row: span 1; 
-}
-
-#img2 {
-    grid-column: span 2; 
-    grid-row: span 1; 
-    height: 390px; 
-}
-
-h1 {
-    text-align: center;
-    color: #E96E1D;
 }

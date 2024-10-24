@@ -143,7 +143,7 @@ export default function Home() {
             </Modal>
 
             <div className="contGalery">
-            <h2 className='titulomap'>The Best Styles</h2>
+            <h2 className='titulomap'>THE BEST STYLES</h2>
                 <figure className="img-gallery">
 
                     <img id="img1" src="/estilo5.webp" alt="Estilo 5" />
