@@ -10,7 +10,6 @@ import { initializeRoles } from "./configs/initialize-role.config";
 import barbershopRoutes from "./routes/barbershop.routes";
 import AppointmentRouter from "./routes/appointment.routes";
 import authRoutes from "./routes/auth.routes";
-import { start } from "repl";
 
 dotenv.config();
 
