@@ -20,5 +20,6 @@ jobs:
           docker compose down
           docker image rmi c21-44-t-node-react-backend:latest
           docker image rmi c21-44-t-node-react-frontend:latest
+          docker compose build --no-cache
           docker compose up -d
           EOF
