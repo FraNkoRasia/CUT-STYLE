@@ -4,6 +4,7 @@ WORKDIR /app
 COPY backend/package*.json ./
 RUN npm install
 COPY backend/ ./
+RUN npx prisma generate
 RUN npm run build
 
 FROM node:18 AS production
@@ -13,5 +14,4 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package*.json ./
 EXPOSE 9000
-RUN npx prisma generate
 CMD ["npm", "run", "start:migrate:prod"]
