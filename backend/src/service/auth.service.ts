@@ -7,13 +7,14 @@ import {
   CreateUserDTO,
   DecodedToken,
   IUser,
+  IUserDto,
   LoginDTO,
 } from "../interfaces/user.interface";
 
 const SECRET_KEY = process.env.JWT_SECRET || "secret";
 
 export class AuthService {
-  static async registerUser(data: CreateUserDTO): Promise<IUser> {
+  static async registerUser(data: CreateUserDTO): Promise<IUserDto> {
     let roleId = data.roleId;
     const hashPassword = await encrypt.encryptpass(data.password);
 
