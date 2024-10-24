@@ -3,11 +3,13 @@ import { conexionApi } from '../Modules/conexionApi';
 import Boton from '../Boton/Boton';
 import '../Formularios/Formulario.css';
 
-export default function RegisterStylist() {
+export default function RegisterBarbershop() {
     const [formData, setFormData] = useState({
         name: '',
-        location: '',
-        coordinates: '',
+        address: '',
+        phone: '',
+        latitude: '',
+        longitude: '',
         image: null,  // Para almacenar el archivo de imagen
     });
     const [message, setMessage] = useState('');
@@ -28,8 +30,10 @@ export default function RegisterStylist() {
         // Crear un objeto FormData para manejar la imagen y los otros datos
         const data = new FormData();
         data.append('name', formData.name);
-        data.append('location', formData.location);
-        data.append('coordinates', formData.coordinates);
+        data.append('address', formData.address);
+        data.append('phone', formData.phone);
+        data.append('latitude', formData.latitude);
+        data.append('longitude', formData.longitude);
         if (formData.image) {
             data.append('image', formData.image);
         }
@@ -64,22 +68,28 @@ export default function RegisterStylist() {
         <div className="form-container">
             <section className='section-formulario'>
                 <form className='Formulario' onSubmit={handleSubmit} encType="multipart/form-data">
-                    <h1>REGISTER STYLIST</h1>
+                    <h1>REGISTER BARBERSHOP</h1>
                     <label htmlFor="name">Name</label>
                     <input id="name" name="name" type="text" placeholder="Name" value={formData.name} onChange={handleChange} required />
 
-                    <label htmlFor="location">Address</label>
-                    <input id="location" name="location" type="text" placeholder="Address" value={formData.location} onChange={handleChange} required />
+                    <label htmlFor="address">Address</label>
+                    <input id="address" name="address" type="text" placeholder="Address" value={formData.address} onChange={handleChange} required />
 
-                    <label htmlFor="coordinates">Coordinates</label>
-                    <input id="coordinates" name="coordinates" type="text" placeholder="Coordinates (e.g., 40.7128, -74.0060)" value={formData.coordinates} onChange={handleChange} required />
+                    <label htmlFor="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required />
+
+                    <label htmlFor="latitude">Latitude</label>
+                    <input id="latitude" name="latitude" type="number" placeholder="Latitude" value={formData.latitude} onChange={handleChange} required />
+
+                    <label htmlFor="longitude">Longitude</label>
+                    <input id="longitude" name="longitude" type="number" placeholder="Longitude" value={formData.longitude} onChange={handleChange} required />
 
                     <label htmlFor="image">Image</label>
                     <input id="image" name="image" type="file" accept="image/*" onChange={handleChange} required />
 
                     <p style={{ color: 'white' }}>All fields are required</p>
 
-                    <Boton texto="Barber Register" className="boton" />
+                    <Boton texto="Register Barbershop" className="boton " />
 
                     {showMessage && <p className={`mensaje ${messageType}`}>{message}</p>}
                 </form>

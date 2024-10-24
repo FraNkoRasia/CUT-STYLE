@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -12,7 +11,7 @@
     font-family: 'Monserrat', sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
 
 .turno-container h2 {
@@ -26,15 +25,14 @@
 .turno-container table {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    border-collapse: separate; 
-    border-spacing: 0 10px; 
+    border-spacing: 0 10px;
 }
 
-.turno-container th, 
+.turno-container th,
 .turno-container td {
-    padding: 15px; 
+    padding: 15px;
     text-align: left;
-  
+
 }
 
 .turno-container th {

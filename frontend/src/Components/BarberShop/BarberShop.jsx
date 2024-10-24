@@ -72,7 +72,7 @@ export default function BarberShop() {
                 </div>
             )}
 
-            <div className="banner-container">
+            <div className="banner-service">
                 <img className="bannerPeluqueria" src="" alt="" />
                 <h1 className="servicesTitle">SERVICES</h1>
             </div>
