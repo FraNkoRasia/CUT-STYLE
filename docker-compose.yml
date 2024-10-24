@@ -25,6 +25,11 @@ services:
       - db
     networks:
       - app-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
 
   db:
     image: postgres:latest
