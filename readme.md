@@ -45,4 +45,20 @@ Uso
 | Database | `Josafat` | PostgresSQL |
 | Deployment | `Josafat` | vercel o Digital ocean (Docker, Nginx) |
 
+
+## Inicializar prisma
+
+```bash
+    npx prisma init
+```
+
+```bash
+    npx prisma migrate dev --name init
+```
+
+```bash
+    npx prisma generate
+```
+
+
 ###### Made with 💖 by c21-44-t-node-react team 🇦🇷 🇲🇽
