@@ -1,12 +1,17 @@
-FROM node:18
+
+FROM node:18 AS builder
 WORKDIR /app
 COPY backend/package*.json ./
 RUN npm install
 COPY backend/ ./
-COPY prisma/ ./prisma/
 RUN npx prisma generate
-RUN npx prisma migrate deploy
-RUN npm run production
-EXPOSE 9000
+RUN npm run build
 
-CMD ["npm", "start"]
+FROM node:18 AS production
+WORKDIR /app
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/package*.json ./
+EXPOSE 9000
+CMD ["npm", "run", "start:migrate:prod"]
