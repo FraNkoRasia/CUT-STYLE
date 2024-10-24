@@ -4,8 +4,8 @@ COPY backend/package*.json ./
 RUN npm install
 COPY backend/ ./
 RUN npx prisma generate
-RUN npx prisma migrate deploy
-RUN npm run production
+COPY start.sh ./
+RUN chmod +x start.sh
 EXPOSE 9000
 
-CMD ["npm", "start"]
+CMD ["./start.sh"]
