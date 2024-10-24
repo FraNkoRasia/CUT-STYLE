@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: Dockerfile.backend
     environment:
-      - POSTGRES_URL=postgres://user:password@db:5432/mydatabase
+      - POSTGRES_URL=postgres://user:password@db:5432/mydatabase?schema=public
       - APP_PORT=9000
     ports:
       - "9000:9000" 
