@@ -7,18 +7,6 @@ datasource db {
   url      = env("POSTGRES_URL")
 }
 
-<<<<<<< HEAD
-model Barbershop {
-  id        Int       @id @default(autoincrement())
-  name      String
-  address   String
-  img       String 
-  phone     String
-  latitude  Float
-  longitude Float
-  createdAt DateTime? @default(now())
-  updatedAt DateTime? @updatedAt()
-=======
 enum Role {
   ADMIN
   USER
@@ -56,5 +44,4 @@ model Appointment {
   userId   Int
   barber   Barbershop @relation(fields: [barberId], references: [id])
   barberId Int
->>>>>>> 8b9bafa756a6e939659882d7b26a74d247360ec9
 }
