@@ -2,6 +2,9 @@ import { Request, Response } from "express";
 import { CreateAppoinmentDTO } from "../interfaces/appointment.interface";
 import { AppointmentService } from "../service/appointment.service";
 
+import logger from "../middleware/logger";
+import { log } from "console";
+
 export class AppointmentController {
   static async createAppointment(req: Request, res: Response): Promise<void> {
     try {
@@ -9,6 +12,7 @@ export class AppointmentController {
       const newAppointment = await AppointmentService.createAppointment(data);
       res.status(201).json(newAppointment);
     } catch (error) {
+      logger.error(error);
       res.status(400).json({ message: "No se pudo registrar la cita" });
     }
   }
@@ -18,6 +22,7 @@ export class AppointmentController {
       const appointments = await AppointmentService.getAppointment();
       res.status(200).json(appointments);
     } catch (error) {
+      logger.error(error);
       res.status(400).json({ message: "Error al obtener las citas" });
     }
   }
@@ -29,11 +34,13 @@ export class AppointmentController {
         Number(id)
       );
       if (!appointment) {
+        logger.error("Cita no encontrada");
         res.status(404).json({ message: "Cita no encontrada" });
         return;
       }
       res.status(200).json(appointment);
     } catch (error) {
+      logger.error(error);
       res.status(400).json({ message: "Error al obtener la cita" });
     }
   }
@@ -48,6 +55,7 @@ export class AppointmentController {
       );
       res.status(200).json(updatedAppointment);
     } catch (error) {
+      logger.error(error);
       res.status(400).json({ message: "Error al actualizar la cita" });
     }
   }
@@ -60,6 +68,7 @@ export class AppointmentController {
       );
       res.status(200).json(deletedAppointment);
     } catch (error) {
+      logger.error(error);
       res.status(400).json({ message: "Error al eliminar la cita" });
     }
   }

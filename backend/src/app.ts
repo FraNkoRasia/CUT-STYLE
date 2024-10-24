@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import { setupSwagger } from "./configs/swagger.config";
+import logger from "./middleware/logger";
 
 import barbershopRoutes from "./routes/barbershop.routes";
 import AppointmentRouter from "./routes/appointment.routes";
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/ping", (req: Request, res: Response) => {
+  logger.info("Peticion a endpoint 🏓");
   res.send("pong 🏓");
 });
 
