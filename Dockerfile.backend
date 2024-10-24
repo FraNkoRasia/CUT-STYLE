@@ -3,9 +3,10 @@ WORKDIR /app
 COPY backend/package*.json ./
 RUN npm install
 COPY backend/ ./
+COPY prisma/ ./prisma/
 RUN npx prisma generate
-COPY start.sh ./
-RUN chmod +x start.sh
+RUN npx prisma migrate deploy
+RUN npm run production
 EXPOSE 9000
 
-CMD ["./start.sh"]
+CMD ["npm", "start"]
