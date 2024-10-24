@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.frontend
+    environment:
+      - VITE_API_URL=http://143.198.98.157:9000
     ports:
       - "3000:80" 
     depends_on:
