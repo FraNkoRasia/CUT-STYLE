@@ -82,8 +82,11 @@ export default function Header() {
                                 <li><Link to="/" onClick={() => handleMenuClick('/')}>Home</Link></li>
                                 <li><Link to="/register" onClick={() => handleMenuClick('/register')}>User Register </Link></li>
                                 <li><Link to="/registerbarber" onClick={() => handleMenuClick('/registerbarber')}>Barber Register</Link></li>
-                                <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
                                 <li><Link to="/login" onClick={() => handleMenuClick('/login')}>Login</Link></li>
+
+                                {/* SOLO PARA VER, HAY Q BORRARLO Y PONERLO EN SU RESPECTIVO ROL */}
+                                <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
+                                <li><Link to="/clientlist" onClick={() => handleMenuClick('/clientlist')}>Client List</Link></li>
                             </>
                         )}
                         {isLoggedIn && userRole === 'Administrador' && (
@@ -93,7 +96,12 @@ export default function Header() {
                         )}
                         {isLoggedIn && userRole === 'Usuario' && (
                             <>
-                                {/* Opciones para Usuario */}
+                                <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
+                            </>
+                        )}
+                        {isLoggedIn && userRole === 'Barber' && (
+                            <>
+                                <li><Link to="/clientlist" onClick={() => handleMenuClick('/clientlist')}>Client List</Link></li>
                             </>
                         )}
                     </ul>

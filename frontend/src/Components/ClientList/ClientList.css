@@ -1,0 +1,60 @@
+.atendido-btn,
+.cancelado-btn {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    font-weight: 550;
+    text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.atendido-btn:hover {
+    background-color: #0c5c10;
+    opacity: 0.9;
+}
+
+.cancelado-btn:hover {
+    background-color: #c20704;
+    opacity: 0.9;
+}
+
+.atendido-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancelado-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.atendido-btn:hover,
+.cancelado-btn:hover {
+    opacity: 0.8;
+}
+
+td:last-child {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    td:last-child {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .atendido-btn,
+    .cancelado-btn {
+        padding: 8px 13px;
+        font-size: 16px;
+
+    }
+}

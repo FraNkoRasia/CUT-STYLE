@@ -143,7 +143,7 @@ nav {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 850px) {
     .logo img {
         width: 180px;
     }
