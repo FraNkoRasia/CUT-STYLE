@@ -5,9 +5,12 @@ import cors from "cors";
 
 import { setupSwagger } from "./configs/swagger.config";
 import logger from "./middleware/logger";
+import { initializeRoles } from "./configs/initialize-role.config";
 
 import barbershopRoutes from "./routes/barbershop.routes";
 import AppointmentRouter from "./routes/appointment.routes";
+import authRoutes from "./routes/auth.routes";
+import { start } from "repl";
 
 dotenv.config();
 
@@ -30,9 +33,21 @@ app.get("/ping", (req: Request, res: Response) => {
 
 app.use("/api/v1", barbershopRoutes);
 app.use("/api/v1", AppointmentRouter);
+app.use("/api/v1", authRoutes);
 
 setupSwagger(app);
 
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+const startServer = async () => {
+  try {
+    await initializeRoles();
+
+    app.listen(port, () => {
+      console.log(`Servidor corriendo en http://localhost:${port}`);
+    });
+  } catch (error) {
+    console.error("Error al iniciar el servidor", error);
+    process.exit(1);
+  }
+};
+
+startServer();
