@@ -10,7 +10,8 @@
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\"",
     "build": "yarn run test && rimraf ./dist && tsc",
-    "production": "rimraf ./dist && tsc"
+    "production": "rimraf ./dist && tsc",
+    "start:migrate:prod": "prisma migrate deploy && npm run start"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
