@@ -6,6 +6,7 @@ import cors from "cors";
 import { setupSwagger } from "./configs/swagger.config";
 import logger from "./middleware/logger";
 import { initializeRoles } from "./configs/initialize-role.config";
+import { getServerIp } from "./helpers/server-ip.adapter";
 
 import barbershopRoutes from "./routes/barbershop.routes";
 import AppointmentRouter from "./routes/appointment.routes";
@@ -41,7 +42,8 @@ const startServer = async () => {
     await initializeRoles();
 
     app.listen(port, () => {
-      console.log(`Servidor corriendo en http://localhost:${port}`);
+      const serverIp = getServerIp();
+      console.log(`Servidor corriendo en http://${serverIp}:${port}`);
     });
   } catch (error) {
     console.error("Error al iniciar el servidor", error);

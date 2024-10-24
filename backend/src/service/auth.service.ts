@@ -51,26 +51,28 @@ export class AuthService {
   }
 
   static async login(loginDTO: LoginDTO) {
-    const user = await prisma.user.findUnique({
+    const userdb = await prisma.user.findUnique({
       where: { email: loginDTO.email },
       include: { role: true },
     });
 
-    if (!user) throw new Error("User not found");
+    if (!userdb) throw new Error("User not found");
 
     const validPassword = await bcrypt.compare(
       loginDTO.password,
-      user.password
+      userdb.password
     );
     if (!validPassword) throw new Error("Invalid password");
 
+    const user = excludeSensitiveInfo(userdb);
+
     const token = jwt.sign(
-      { userId: user.id, role: user.role.name },
+      { userId: userdb.id, role: userdb.role.name },
       SECRET_KEY,
       { expiresIn: "24h" }
     );
 
-    return { token };
+    return { token, user };
   }
 
   async verifyToken(token: string) {
@@ -80,4 +82,9 @@ export class AuthService {
       throw new Error("Invalid token");
     }
   }
+}
+
+function excludeSensitiveInfo(user: IUser) {
+  const { password, roleId, ...userWithoutSensitiveInfo } = user;
+  return userWithoutSensitiveInfo;
 }
