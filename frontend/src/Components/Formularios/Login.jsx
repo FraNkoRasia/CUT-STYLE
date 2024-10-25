@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Boton from "../Boton/Boton";
 import "../Formularios/Formulario.css";
 
 const Login = () => {
-  
+
 
   const [formData, setFormData] = useState({
     email: "",
@@ -37,9 +37,9 @@ const Login = () => {
       localStorage.setItem("role", response.data.user.role.name);
 
 
-      toast.success("Usuario registrado con exito!");
+      toast.success("Usuario Logueado con exito!");
 
-      window.location.href = "/";
+      window.location.replace('/');
 
     } catch (error) {
       if (
@@ -84,7 +84,11 @@ const Login = () => {
             ¿Olvidaste tu contraseña?
           </Link>
         </form>
-        <Toaster reverseOrder={false} />
+        <Toaster
+          reverseOrder={false}
+          position="top-center"
+          containerStyle={{ marginTop: "90px" }}
+        />
       </section>
     </div>
   );

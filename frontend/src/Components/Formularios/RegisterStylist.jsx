@@ -37,12 +37,8 @@ const RegisterBarbershop = () => {
 
             console.log(response);
 
-            toast.success("Usuario registrado con exito!");
-           
-            setTimeout(() => {
-                window.location.href = "/";
-            }, 5000); 
-
+            toast.success("Barbero registrado con exito!");
+            window.location.replace('/'); 
         } catch (error) {
             toast.error("Error creando al usuario");
         }
@@ -128,6 +124,7 @@ const RegisterBarbershop = () => {
                     <Boton texto="Register" className="boton" />
                 </form>
                 <Toaster
+                    reverseOrder={false}
                     position="top-center"
                     containerStyle={{ marginTop: "90px" }}
                 />

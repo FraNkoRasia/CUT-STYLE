@@ -33,9 +33,11 @@ export default function Header() {
     };
 
     const handleLogout = () => {
-        sessionStorage.clear(); // Limpia token y rol de la sesión
-        window.location.href = '/login';
+        localStorage.clear();      
+        sessionStorage.clear();    
+        window.location.replace('/'); 
     };
+
 
     useEffect(() => {
         const handleClickOutside = (event) => {
