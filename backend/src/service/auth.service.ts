@@ -14,7 +14,7 @@ import {
 const SECRET_KEY = process.env.JWT_SECRET || "secret";
 
 export class AuthService {
-  static async registerUser(data: CreateUserDTO): Promise<IUserDto> {
+  static async registerUser(data: CreateUserDTO) {
     let roleId = data.roleId;
     const hashPassword = await encrypt.encryptpass(data.password);
 
@@ -43,11 +43,15 @@ export class AuthService {
         name: data.name,
         email: data.email,
         password: hashPassword,
+        lastname: data.lastname,
+        phone: data.phone,
         roleId: roleId,
       },
     });
 
-    return newUser;
+    const user = excludeSensitiveInfo(newUser);
+
+    return user;
   }
 
   static async login(loginDTO: LoginDTO) {

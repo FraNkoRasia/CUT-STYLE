@@ -3,6 +3,8 @@ export interface IUser {
   name: string;
   email: string;
   password: string;
+  lastname: string;
+  phone: string;
   roleId: number;
   createdAt: Date | null;
   updatedAt: Date | null;
@@ -12,6 +14,8 @@ export interface IUserDto {
   id: number;
   name: string;
   email: string;
+  lastname: string;
+  phone: string;
   roleId: number;
   createdAt: Date | null;
   updatedAt: Date | null;
@@ -33,6 +37,8 @@ export class CreateUserDTO {
   name: string;
   email: string;
   password: string;
+  lastname: string;
+  phone: string;
   roleId?: number;
 }
 
