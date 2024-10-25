@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Boton from "../Boton/Boton";
@@ -39,11 +38,11 @@ const RegisterBarbershop = () => {
             console.log(response);
 
             toast.success("Usuario registrado con exito!");
-            // Agrega un retraso de 5 segundos antes de redirigir
+           
             setTimeout(() => {
                 window.location.href = "/";
-            }, 5000); // 5000 milisegundos = 5 segundos
-        
+            }, 5000); 
+
         } catch (error) {
             toast.error("Error creando al usuario");
         }
@@ -129,12 +128,11 @@ const RegisterBarbershop = () => {
                     <Boton texto="Register" className="boton" />
                 </form>
                 <Toaster
-                    position="top-center" 
-                    containerStyle={{ marginTop: "90px" }} 
+                    position="top-center"
+                    containerStyle={{ marginTop: "90px" }}
                 />
             </section>
         </div>
     );
 };
-
 export default RegisterBarbershop;

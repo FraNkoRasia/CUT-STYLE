@@ -39,10 +39,10 @@ const Register = () => {
       console.log(response);
 
       toast.success("Usuario registrado con exito!");
-      // Agrega un retraso de 5 segundos antes de redirigir
+      
       setTimeout(() => {
         window.location.href = "/";
-      }, 5000); // 5000 milisegundos = 5 segundos
+      }, 5000); 
     } catch (error) {
       toast.error("Error creando al usuario");
     }
