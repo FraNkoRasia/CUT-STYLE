@@ -180,3 +180,52 @@ nav {
 @media (min-width: 1536px) {}
 
 /* color naranja #e27735 */
+
+/* Admin Submenu */
+
+.admin-submenu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+    position: absolute;
+    background-color: #1f1f1f;
+    top: 70px;
+    right: 15px;
+    z-index: 999;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    width: 200px;
+}
+
+
+/* Mostrar el submenú cuando el estado open esté activo */
+.admin-submenu.open {
+    display: block;
+}
+
+.admin-dropdown-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Estilos del submenu */
+.admin-submenu li {
+    color: #AFB1B6;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 5px 0;
+    font-family: 'Monserrat', sans-serif;
+}
+
+.admin-submenu li:hover {
+    color: #E96E1D;
+}
+
+/* Ajuste para que no empuje otros elementos */
+.position-relative {
+    position: relative;
+}

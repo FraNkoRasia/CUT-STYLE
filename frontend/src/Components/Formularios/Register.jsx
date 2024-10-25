@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-
 import Boton from "../Boton/Boton";
-
 import "../Formularios/Formulario.css";
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +39,10 @@ const Register = () => {
       console.log(response);
 
       toast.success("Usuario registrado con exito!");
-      Navigate("/login");
+      // Agrega un retraso de 5 segundos antes de redirigir
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 5000); // 5000 milisegundos = 5 segundos
     } catch (error) {
       toast.error("Error creando al usuario");
     }
@@ -50,7 +52,7 @@ const Register = () => {
     <div className="form-container">
       <section className="section-formulario">
         <form className="Formulario" onSubmit={handleSubmit}>
-          <h1>REGISTER</h1>
+          <h1>USER REGISTER</h1>
           <label htmlFor="email">Email</label>
           <input
             id="email"
@@ -125,7 +127,10 @@ const Register = () => {
           <p style={{ color: "white" }}>All fields are required</p>
           <Boton texto="Register" className="boton" />
         </form>
-        <Toaster />
+        <Toaster
+          position="top-center" 
+          containerStyle={{ marginTop: "90px" }} 
+        />
       </section>
     </div>
   );

@@ -67,7 +67,7 @@ const Login = () => {
 
       toast.success("Usuario registrado con exito!");
 
-      Navigate("/");
+      window.location.href = "/";
     } catch (error) {
       toast.error("Error creando al usuario");
     }

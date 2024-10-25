@@ -1,99 +1,140 @@
-import React, { useState, useEffect } from 'react';
-import { conexionApi } from '../Modules/conexionApi';
-import Boton from '../Boton/Boton';
-import '../Formularios/Formulario.css';
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import Boton from "../Boton/Boton";
+import "../Formularios/Formulario.css";
 
-export default function RegisterBarbershop() {
+
+const RegisterBarbershop = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        address: '',
-        phone: '',
-        latitude: '',
-        longitude: '',
-        image: null,  // Para almacenar el archivo de imagen
+        email: "",
+        password: "",
+        name: "",
+        roleId: 3,
+        tyc: false,
     });
-    const [message, setMessage] = useState('');
-    const [messageType, setMessageType] = useState(''); // 'success' o 'error'
-    const [showMessage, setShowMessage] = useState(false); // Para controlar la visibilidad del mensaje
 
     const handleChange = (e) => {
-        const { name, value, type, files } = e.target;
+        const { name, value, type, checked } = e.target;
         setFormData({
             ...formData,
-            [name]: type === 'file' ? files[0] : value  // Si es archivo, guarda el archivo; de lo contrario, el valor.
+            [name]: type === "checkbox" ? checked : value,
         });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // Crear un objeto FormData para manejar la imagen y los otros datos
-        const data = new FormData();
-        data.append('name', formData.name);
-        data.append('address', formData.address);
-        data.append('phone', formData.phone);
-        data.append('latitude', formData.latitude);
-        data.append('longitude', formData.longitude);
-        if (formData.image) {
-            data.append('image', formData.image);
-        }
-
         try {
-            const respuesta = await conexionApi.registro(data);  // Envío con FormData
-            if (respuesta) {
-                setMessage('Registro exitoso');
-                setMessageType('success');
-                setShowMessage(true);
-                setTimeout(() => {
-                    window.location.href = '/login';
-                }, 5000); // Redirige después de 5 segundos para permitir que el mensaje se vea
-            }
+            const response = await axios.post(
+                `${import.meta.env.VITE_API_URL}/api/v1/register`,
+                {
+                    email: formData.email,
+                    password: formData.password,
+                    name: formData.name,
+                    roleId: formData.roleId,
+                }
+            );
+
+            console.log(response);
+
+            toast.success("Usuario registrado con exito!");
+            // Agrega un retraso de 5 segundos antes de redirigir
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 5000); // 5000 milisegundos = 5 segundos
+        
         } catch (error) {
-            setMessage(`Error al registrar: ${error.message}`);
-            setMessageType('error');
-            setShowMessage(true);
+            toast.error("Error creando al usuario");
         }
     };
 
-    useEffect(() => {
-        if (showMessage) {
-            const timer = setTimeout(() => {
-                setShowMessage(false);
-            }, 5000);
-            return () => clearTimeout(timer);
-        }
-    }, [showMessage]);
-
     return (
         <div className="form-container">
-            <section className='section-formulario'>
-                <form className='Formulario' onSubmit={handleSubmit} encType="multipart/form-data">
-                    <h1>REGISTER BARBERSHOP</h1>
+            <section className="section-formulario">
+                <form className="Formulario" onSubmit={handleSubmit}>
+                    <h1>BARBER REGISTER</h1>
+                    <label htmlFor="email">Email</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Ej: example@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label htmlFor="password">Password</label>
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    {/* <label htmlFor="password2">Repeat Password</label>
+          <input
+            id="password2"
+            name="password2"
+            type="password"
+            placeholder="Repeat Password"
+            value={formData.password2}
+            onChange={handleChange}
+            required
+          /> */}
                     <label htmlFor="name">Name</label>
-                    <input id="name" name="name" type="text" placeholder="Name" value={formData.name} onChange={handleChange} required />
-
-                    <label htmlFor="address">Address</label>
-                    <input id="address" name="address" type="text" placeholder="Address" value={formData.address} onChange={handleChange} required />
-
-                    <label htmlFor="phone">Phone</label>
-                    <input id="phone" name="phone" type="tel" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required />
-
-                    <label htmlFor="latitude">Latitude</label>
-                    <input id="latitude" name="latitude" type="number" placeholder="Latitude" value={formData.latitude} onChange={handleChange} required />
-
-                    <label htmlFor="longitude">Longitude</label>
-                    <input id="longitude" name="longitude" type="number" placeholder="Longitude" value={formData.longitude} onChange={handleChange} required />
-
-                    <label htmlFor="image">Image</label>
-                    <input id="image" name="image" type="file" accept="image/*" onChange={handleChange} required />
-
-                    <p style={{ color: 'white' }}>All fields are required</p>
-
-                    <Boton texto="Register Barbershop" className="boton " />
-
-                    {showMessage && <p className={`mensaje ${messageType}`}>{message}</p>}
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                    {/* <label htmlFor="lastName">Last Name</label>
+          <input
+            id="lastName"
+            name="lastName"
+            type="text"
+            placeholder="Last Name"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+          /> */}
+                    {/* <label htmlFor="phone">Phone</label>
+          <input
+            id="phone"
+            name="phone"
+            type="number"
+            placeholder="Phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          /> */}
+                    <div className="checkbox">
+                        <input
+                            type="checkbox"
+                            name="tyc"
+                            id="tyc"
+                            checked={formData.tyc}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label htmlFor="tyc"> I accept terms and conditions</label>
+                    </div>
+                    <p style={{ color: "white" }}>All fields are required</p>
+                    <Boton texto="Register" className="boton" />
                 </form>
+                <Toaster
+                    position="top-center" 
+                    containerStyle={{ marginTop: "90px" }} 
+                />
             </section>
         </div>
     );
 };
+
+export default RegisterBarbershop;

@@ -9,6 +9,7 @@ import About from './Components/About/About';
 import BarberShop from './Components/BarberShop/BarberShop';
 import Turno from './Components/MyTurn/Turno';
 import ClientList from './Components/ClientList/ClientList';
+import Hairdresser from './Components/Formularios/hairdresser';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import PublicRoute from './Components/ProtectedRoute/PublicRoute';
 import Footer from './Components/Footer/Footer';
@@ -21,20 +22,20 @@ function App() {
       <Header />
 
       <Routes>
-        {/* Ruta pública para Home y About, sin restricción */}
+
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-
         {/* Rutas públicas protegidas */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/registerbarber" element={<RegisterStylist />} />
-
+        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+        <Route path="/registerbarber" element={<PublicRoute><RegisterStylist /></PublicRoute>} />
+        <Route path="/about" element={<PublicRoute><About /></PublicRoute>} />
 
         {/* Ruta protegida */}
-        <Route path="/barbershop" element={<BarberShop />} />
-        <Route path="/turno" element={<Turno />} />
-        <Route path="/clientlist" element={<ClientList />} />
+        <Route path="/barbershop" element={<ProtectedRoute><BarberShop /></ProtectedRoute>} />
+        <Route path="/turno" element={<ProtectedRoute><Turno /></ProtectedRoute>} />
+        <Route path="/clientlist" element={<ProtectedRoute><ClientList /></ProtectedRoute>} />
+        <Route path="/hairdresser" element={<ProtectedRoute><Hairdresser /></ProtectedRoute>} />
+
       </Routes>
 
       <Footer />
