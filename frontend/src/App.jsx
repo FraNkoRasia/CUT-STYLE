@@ -9,13 +9,12 @@ import About from './Components/About/About';
 import BarberShop from './Components/BarberShop/BarberShop';
 import Turno from './Components/MyTurn/Turno';
 import ClientList from './Components/ClientList/ClientList';
-import Hairdresser from './Components/Formularios/hairdresser';
+import Hairdresser from './Components/Formularios/Hairdresser';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import PublicRoute from './Components/ProtectedRoute/PublicRoute';
 import Footer from './Components/Footer/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <Router>
@@ -35,6 +34,7 @@ function App() {
         <Route path="/turno" element={<ProtectedRoute><Turno /></ProtectedRoute>} />
         <Route path="/clientlist" element={<ProtectedRoute><ClientList /></ProtectedRoute>} />
         <Route path="/hairdresser" element={<ProtectedRoute><Hairdresser /></ProtectedRoute>} />
+        
 
       </Routes>
 

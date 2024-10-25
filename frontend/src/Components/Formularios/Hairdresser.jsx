@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function hairdresser() {
+export default function Hairdresser() {
   return (
     <div>hairdresser</div>
   )
