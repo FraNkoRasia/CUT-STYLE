@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import toast, { Toaster } from 'react-hot-toast';
-import Boton from '../Boton/Boton';
+import React, { useState } from "react";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import Boton from "../Boton/Boton";
 import "../Formularios/Formulario.css";
 
 const Hairdresser = () => {
@@ -9,8 +9,8 @@ const Hairdresser = () => {
     name: "",
     address: "",
     phone: "",
-    latitude: "",
-    longitude: "",
+    latitude: 0.0,
+    longitude: 0.0,
     img: "",
   });
 
@@ -20,10 +20,13 @@ const Hairdresser = () => {
 
     setFormData((prevData) => ({
       ...prevData,
-      [name]: type === "checkbox"
-        ? checked
-        : (name === "latitude" || name === "longitude")
-          ? value !== "" ? parseFloat(value) : "" // Solo parsear si no está vacío
+      [name]:
+        type === "checkbox"
+          ? checked
+          : name === "latitude" || name === "longitude"
+          ? value !== ""
+            ? parseFloat(value)
+            : "" // Solo parsear si no está vacío
           : value,
     }));
   };
@@ -32,13 +35,20 @@ const Hairdresser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const token = sessionStorage.getItem('token'); // Obtiene el token del almacenamiento
-    if (!formData.latitude || isNaN(formData.latitude) || !formData.longitude || isNaN(formData.longitude)) {
-      toast.error("Por favor ingresa coordenadas válidas para latitud y longitud.");
+    const token = sessionStorage.getItem("token"); // Obtiene el token del almacenamiento
+    if (
+      !formData.latitude ||
+      isNaN(formData.latitude) ||
+      !formData.longitude ||
+      isNaN(formData.longitude)
+    ) {
+      toast.error(
+        "Por favor ingresa coordenadas válidas para latitud y longitud."
+      );
       return;
     }
     if (!token) {
-      toast.error('No se encontró el token de autenticación.');
+      toast.error("No se encontró el token de autenticación.");
       return;
     }
 
@@ -63,14 +73,19 @@ const Hairdresser = () => {
       console.log(response);
       toast.success("Peluquería registrada con éxito");
       setTimeout(() => {
-        window.location.replace('/'); // Redirigir después de 2 segundos
+        window.location.replace("/"); // Redirigir después de 2 segundos
       }, 2000);
     } catch (error) {
       // Verifica si hay un mensaje específico de error y lo muestra
-      if (error.response && error.response.data && error.response.data.message) {
+      console.log(error);
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
         toast.error(`Error al registrarte: ${error.response.data.message}`);
       } else {
-        toast.error('Error al registrarte. Por favor, intenta nuevamente.');
+        toast.error("Error al registrarte. Por favor, intenta nuevamente.");
       }
     }
   };
