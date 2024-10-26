@@ -17,8 +17,7 @@ export const authMiddleware = (
   }
 
   try {
-    const decoded = jwt.verify(token, SECRET_KEY) as DecodedToken;
-    req.body.decoded = decoded;
+    jwt.verify(token, SECRET_KEY) as DecodedToken;
     next();
   } catch (err) {
     res.status(401).json({ message: "Token invalido" });
@@ -27,13 +26,25 @@ export const authMiddleware = (
 
 export const roleMiddleware = (roles: string[]) => {
   return (req: Request, res: Response, next: NextFunction): void => {
-    const decoded = req.body.decoded as DecodedToken | undefined;
+    const token = req.headers.authorization?.split(" ")[1];
 
-    if (!decoded || !roles.includes(decoded.role)) {
-      res.status(403).json({ message: "No tienes acceso a este recurso" });
+    if (!token) {
+      res.status(401).json({ message: "No tienes acceso a este recurso" });
       return;
     }
 
-    next();
+    try {
+      const decoded = jwt.verify(token, SECRET_KEY) as { role: string };
+      if (!roles.includes(decoded.role)) {
+        res
+          .status(403)
+          .json({ message: "El rol no tiene acceso a este recurso" });
+        return;
+      }
+
+      next();
+    } catch (err) {
+      res.status(401).json({ message: "Token inválido" });
+    }
   };
 };
