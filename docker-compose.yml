@@ -15,6 +15,9 @@ services:
       - backend
     networks:
       - app-network
+    restart: always
+    tty: true
+  
 
   backend:
     build:
@@ -35,6 +38,8 @@ services:
       options:
         max-size: "10m"
         max-file: "5"
+    restart: always
+    tty: true
 
   db:
     image: postgres:latest
@@ -52,6 +57,8 @@ services:
       - postgres_data:/var/lib/postgresql/data 
     networks:
       - app-network
+    restart: always
+    tty: true
 
 networks:
   app-network:
