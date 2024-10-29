@@ -12,6 +12,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    max-width: 150px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .turno-container h2 {
@@ -54,4 +70,38 @@
 
 .turno-container tbody tr:hover {
     background-color: rgba(68, 68, 68, 0.8);
+}
+
+
+/* /////////////////////////////////// */
+
+/* Estilos generales */
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 640px) {
+
+    .turno-container th,
+    .turno-container td {
+        padding: 8px;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .turno-container th {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Ajustes adicionales para filas */
+    .turno-container tbody tr:hover {
+        background-color: rgba(68, 68, 68, 0.7);
+    }
+
+    /* Ajuste de fuente para texto */
+    .turno-container th,
+    .turno-container td {
+        font-size: 12px;
+    }
 }

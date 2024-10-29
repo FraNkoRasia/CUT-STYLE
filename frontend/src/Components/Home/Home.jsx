@@ -15,7 +15,7 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-export default function Home() { 
+export default function Home() {
     const mapRef = useRef(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalContent, setModalContent] = useState({});
@@ -143,7 +143,7 @@ export default function Home() {
             </Modal>
 
             <div className="contGalery">
-            <h2 className='titulomap'>THE BEST STYLES</h2>
+                <h2 className='titulomap'>THE BEST STYLES</h2>
                 <figure className="img-gallery">
 
                     <img id="img1" src="/estilo5.webp" alt="Estilo 5" />

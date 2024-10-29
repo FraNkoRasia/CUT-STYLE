@@ -159,7 +159,11 @@ const Hairdresser = () => {
           />
           <Boton texto="Register" className="boton" />
         </form>
-        <Toaster />
+        <Toaster
+          reverseOrder={false}
+          position="top-center"
+          containerStyle={{ marginTop: "90px" }}
+        />
       </section>
     </div>
   );

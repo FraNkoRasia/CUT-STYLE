@@ -52,7 +52,7 @@
     width: 100%;
     height: auto;
     vertical-align: middle;
-    max-width: 450px;
+    max-width: 400px;
     margin: 25px 0;
 }
 
@@ -71,7 +71,7 @@
     font-size: 22px;
     font-family: "Exo", sans-serif;
     font-weight: 700;
-    margin: 0 0 32px;
+    margin: 25px 0 25px;
 }
 
 .servicio p {
@@ -97,6 +97,7 @@
     width: 100%;
     max-width: 220px;
 }
+
 
 /* MODAL */
 .modal-over {
@@ -181,6 +182,13 @@ select {
         display: flex;
         flex-direction: column;
         color: #bbb;
+    }
+}
+
+@media (min-width: 768px) {
+    .servicio {
+        flex-direction: row;
+        gap: 10px;
     }
 }
 

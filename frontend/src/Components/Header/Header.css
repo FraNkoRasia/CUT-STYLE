@@ -132,6 +132,35 @@ nav {
     color: #E96E1D;
 }
 
+/* Admin Submenu */
+/* Admin Submenu */
+.admin-submenu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+    /* background-color: #1f1f1f; */
+    border-radius: 5px;
+    /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); */
+    width: 200px;
+    margin-top: 10px;
+    /* Añadir margen para separación */
+}
+
+.admin-submenu.open {
+    display: block;
+}
+
+/* Estilos del submenu */
+.admin-submenu li {
+    font-size: 18px;
+    margin: 5px 0;
+    list-style: disc;
+}
+
+.admin-submenu li:hover {
+    color: #E96E1D;
+}
+
 @media (min-width: 640px) {
     .logo img {
         width: 170px;
@@ -141,9 +170,36 @@ nav {
         margin-left: 20px;
         margin-right: 35px;
     }
+
 }
 
 @media (min-width: 850px) {
+    .admin-submenu {
+        position: absolute;
+        top: 60px;
+        /* Ajusta según la altura del header */
+        right: 10px;
+        /* Ajusta según la alineación deseada */
+        background-color: #1f1f1f;
+        border-radius: 5px;
+        padding: 10px;
+        width: 200px;
+        z-index: 1000;
+        display: none;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Mostrar el submenú de admin cuando esté abierto */
+    .admin-submenu.open {
+        display: block;
+        box-shadow: inset 0px 0px 30px 10px #000000b2;
+        margin-right: 95px;
+    }
+
+    .admin-submenu li {
+        list-style: none;
+    }
+
     .logo img {
         width: 180px;
     }
@@ -164,7 +220,7 @@ nav {
     }
 
     .ul li {
-        margin: 0 15px;
+        margin: 10px 15px;
         font-size: 18px;
     }
 }
@@ -180,52 +236,3 @@ nav {
 @media (min-width: 1536px) {}
 
 /* color naranja #e27735 */
-
-/* Admin Submenu */
-
-.admin-submenu {
-    display: none;
-    list-style-type: none;
-    padding-left: 20px;
-    position: absolute;
-    background-color: #1f1f1f;
-    top: 70px;
-    right: 15px;
-    z-index: 999;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-    width: 200px;
-}
-
-
-/* Mostrar el submenú cuando el estado open esté activo */
-.admin-submenu.open {
-    display: block;
-}
-
-.admin-dropdown-toggle {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-/* Estilos del submenu */
-.admin-submenu li {
-    color: #AFB1B6;
-    font-weight: 400;
-    font-size: 18px;
-    margin: 5px 0;
-    font-family: 'Monserrat', sans-serif;
-}
-
-.admin-submenu li:hover {
-    color: #E96E1D;
-}
-
-/* Ajuste para que no empuje otros elementos */
-.position-relative {
-    position: relative;
-}

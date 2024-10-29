@@ -7,10 +7,11 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userRole, setUserRole] = useState(null);
-    const [activeItem, setActiveItem] = useState(null); // Estado para el item activo
-    const [adminMenuOpen, setAdminMenuOpen] = useState(false); // Estado para controlar el submenú del admin
+    const [activeItem, setActiveItem] = useState(null);
+    const [adminMenuOpen, setAdminMenuOpen] = useState(false);
     const menuRef = useRef(null);
     const hamburguesaRef = useRef(null);
+    const adminMenuRef = useRef(null); // Nueva referencia para el submenú
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -28,19 +29,19 @@ export default function Header() {
 
     const handleMenuClick = (path, index) => {
         setMenuOpen(false);
-        setActiveItem(index); // Actualiza el item activo
+        setActiveItem(index);
         navigate(path);
     };
 
     const handleLogout = () => {
-        localStorage.clear();      
-        sessionStorage.clear();    
-        window.location.replace('/'); 
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.replace('/');
     };
-
 
     useEffect(() => {
         const handleClickOutside = (event) => {
+            // Cerrar menú de hamburguesa
             if (
                 menuRef.current &&
                 !menuRef.current.contains(event.target) &&
@@ -48,6 +49,15 @@ export default function Header() {
                 !hamburguesaRef.current.contains(event.target)
             ) {
                 setMenuOpen(false);
+            }
+
+            // Cerrar submenú de admin
+            if (
+                adminMenuRef.current &&
+                !adminMenuRef.current.contains(event.target) &&
+                !hamburguesaRef.current.contains(event.target) // Asegúrate de que el clic no sea en el botón de hamburguesa
+            ) {
+                setAdminMenuOpen(false);
             }
         };
 
@@ -90,29 +100,25 @@ export default function Header() {
 
                         {/* Opciones para Administrador con Submenú */}
                         {isLoggedIn && userRole === 'ADMIN' && (
-                            <>
-                                <li>
-                                    <button
-                                        className="admin-dropdown-toggle"
-                                        onClick={() => setAdminMenuOpen(!adminMenuOpen)}
-                                    >
-                                        Admin Dashboard
-                                    </button>
-                                    <ul className={`admin-submenu ${adminMenuOpen ? 'open' : ''}`}>
-                                        <li><Link to="/admin/users" onClick={() => handleMenuClick('/admin/users')}>List Users</Link></li>
-                                        <li><Link to="/admin/barbers" onClick={() => handleMenuClick('/admin/barbers')}>List Barbers</Link></li>
-                                        <li><Link to="/admin/turns" onClick={() => handleMenuClick('/admin/turns')}>List Turns</Link></li>
-                                        <li><Link to="/admin/hairdresser" onClick={() => handleMenuClick('/admin/hairdresser')}>List Hairdresser</Link></li>
-                                    </ul>
-                                </li>
-                            </>
+                            <li ref={adminMenuRef}>
+                                <button
+                                    className="admin-dropdown-toggle"
+                                    onClick={() => setAdminMenuOpen(!adminMenuOpen)}
+                                >
+                                    Dashboard
+                                </button>
+                                <ul className={`admin-submenu ${adminMenuOpen ? 'open' : ''}`}>
+                                    <li><Link to="/admin/users" onClick={() => handleMenuClick('/admin/users')}>List Users</Link></li>
+                                    <li><Link to="/admin/barbers" onClick={() => handleMenuClick('/admin/barbers')}>List Barbers</Link></li>
+                                    <li><Link to="/admin/turns" onClick={() => handleMenuClick('/admin/turns')}>Shift list</Link></li>
+                                    <li><Link to="/admin/hairdresser" onClick={() => handleMenuClick('/admin/hairdresser')}>List Hairdresser</Link></li>
+                                </ul>
+                            </li>
                         )}
 
                         {/* Opciones para Usuario */}
                         {isLoggedIn && userRole === 'USER' && (
-                            <>
-                                <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
-                            </>
+                            <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
                         )}
 
                         {/* Opciones para Barber */}
@@ -120,6 +126,7 @@ export default function Header() {
                             <>
                                 <li><Link to="/clientlist" onClick={() => handleMenuClick('/clientlist')}>Client List</Link></li>
                                 <li><Link to="/hairdresser" onClick={() => handleMenuClick('/hairdresser')}>Hairdresser</Link></li>
+                                <li><Link to="/myhairdresser" onClick={() => handleMenuClick('/myhairdresser')}>My Hairdresser</Link></li>
                             </>
                         )}
 

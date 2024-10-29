@@ -49,7 +49,7 @@ const Register = () => {
 
       toast.success("Usuario registrado con exito!");
       setTimeout(() => {
-        window.location.replace('/');
+        window.location.replace('/login');
       }, 2000);
 
     } catch (error) {

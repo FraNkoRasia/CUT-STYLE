@@ -1,7 +1,7 @@
 import React from 'react';
-import './Turno.css';
+import './MyList.css';
 
-export default function Turno() {
+export default function MyTurn() {
     const datos = [
         { nombre: 'Juan Pérez', barberia: 'Barbería Estilo', fecha: '2024-10-21 / 10:30 Am', servi: 'Fade y Barba'},
         { nombre: 'Facundo Pérez', barberia: 'Styl Main', fecha: '2024-9-11 / 11:00 Am', servi: 'Color y Corte'}
@@ -9,14 +9,14 @@ export default function Turno() {
 
     return (
         <div className="turno-container">
-            <h2>Turnos Programados</h2>
+            <h2>SCHEDULED SHIFTS</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Usuario</th>
-                        <th>Barbería</th>
-                        <th>Turno</th>
-                        <th>Servicio</th>
+                        <th>User</th>
+                        <th>Barber</th>
+                        <th>Turn</th>
+                        <th>Service</th>
                     </tr>
                 </thead>
                 <tbody>
