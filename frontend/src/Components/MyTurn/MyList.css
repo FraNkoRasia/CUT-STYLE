@@ -3,17 +3,19 @@
 
 .turno-container {
     padding: 20px;
+    padding-bottom: 40px; /* Añadir espacio extra en la parte inferior */
     background-image: url('/fondoabout.webp');
     background-size: cover;
     background-position: center;
     color: #e27735;
-    height: 100vh;
+    height: calc(100vh - 40px); /* Ajustar la altura para evitar que el contenido se desplace */
     font-family: 'Monserrat', sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
     overflow-x: auto;
+    overflow-y: auto; /* Asegurarse de que se pueda desplazar verticalmente */
 }
+
 
 table {
     width: 100%;
@@ -24,7 +26,7 @@ th,
 td {
     padding: 10px;
     text-align: left;
-    max-width: 150px;
+
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -34,7 +36,7 @@ td {
     font-family: "Exo", sans-serif;
     text-align: center;
     margin-bottom: 20px;
-    font-size: clamp(30px, 4.167vw, 50px);
+    font-size: clamp(25px, 4.167vw, 50px);
     color: white;
     font-weight: 700;
 }
@@ -64,6 +66,7 @@ td {
     font-weight: bold;
     text-align: center;
     margin: 0 10px;
+    padding: 8px;
     box-shadow: inset 0px 0px 15px #000;
     filter: drop-shadow(5px 5px 20px rgb(0, 0, 0));
 }
@@ -72,21 +75,54 @@ td {
     background-color: rgba(68, 68, 68, 0.8);
 }
 
+.turnList td {
+    padding: 8px;
+}
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
 
-/* /////////////////////////////////// */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Color de fondo de la pista */
+   }
 
-/* Estilos generales */
+::-webkit-scrollbar-thumb {
+    background: #e27735; /* Color del pulgar (parte que arrastra) */
+    
+}
 
+::-webkit-scrollbar-thumb:hover {
+    background: #d16524; /* Color del pulgar al pasar el mouse */
+}
 
+::-webkit-scrollbar-thumb:active {
+    background: #5a5755; /* Color del pulgar cuando está activo */
+}
+.table-scroll-container {
+    overflow-x: auto; /* Activar el desplazamiento horizontal */
+    width: 100%; /* Asegúrate de que el contenedor use el 100% del ancho disponible */
+    max-width: 100%; /* Limitar el ancho máximo para evitar overflow */
+    padding-bottom: 10px; /* Espacio para la barra de desplazamiento */
+}
+
+.table-scroll-container::-webkit-scrollbar {
+    height: 5px; /* Cambia el ancho de la barra de desplazamiento horizontal */
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background: #e27735; /* Color del pulgar */
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #d16524; /* Color del pulgar al pasar el mouse */
+}
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 640px) {
-
-    .turno-container th,
     .turno-container td {
         padding: 8px;
         font-size: 12px;
-        text-align: left;
     }
 
     .turno-container th {
@@ -94,12 +130,10 @@ td {
         padding: 10px;
     }
 
-    /* Ajustes adicionales para filas */
     .turno-container tbody tr:hover {
         background-color: rgba(68, 68, 68, 0.7);
     }
 
-    /* Ajuste de fuente para texto */
     .turno-container th,
     .turno-container td {
         font-size: 12px;

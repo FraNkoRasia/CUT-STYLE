@@ -118,7 +118,7 @@ export default function Header() {
 
                         {/* Opciones para Usuario */}
                         {isLoggedIn && userRole === 'USER' && (
-                            <li><Link to="/turno" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
+                            <li><Link to="/turn" onClick={() => handleMenuClick('/turno')}>My Turn</Link></li>
                         )}
 
                         {/* Opciones para Barber */}

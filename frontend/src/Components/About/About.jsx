@@ -68,27 +68,6 @@ export default function About() {
                         <div className="img__back"></div>
                     </div>
                     <div className="description">
-                        <h2>Emanuel Rodriguez</h2>
-                        <p className='roldev'>FRONTEND DEVELOPER</p>
-                        <p className='desc'>
-                            Desarrollador especializado en la creación de interfaces
-                            atractivas y funcionales. Experto en tecnologías modernas
-                            como React y CSS, enfocado en ofrecer experiencias de usuario
-                            intuitivas y eficientes.</p>
-                        <div>
-                            <a className='iconogithub' href=""><ImGithub size={40} /></a>
-                            <a className='iconolinkedin' href=""><FaLinkedin size={40} /></a>
-                        </div>
-
-                    </div>
-                </div>
-                 {/* Card 3 */}
-                 <div className="card">
-                    <div className="cover">
-                        <img src={Image} alt="" />
-                        <div className="img__back"></div>
-                    </div>
-                    <div className="description">
                         <h2>Franco Rasia</h2>
                         <p className='roldev'>FRONTEND DEVELOPER</p>
                         <p className='desc'>

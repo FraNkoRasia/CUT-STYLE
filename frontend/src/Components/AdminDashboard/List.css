@@ -1,0 +1,22 @@
+.btnModal-userlist {
+    display: flex;
+    gap: 10px;
+}
+
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.manual-padding {
+    margin: 10px;
+    padding: 5px 10px;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.modal .titleModal-Listuser {
+    text-align: center;
+    margin: 10px;
+    font-size: 23px;
+}
