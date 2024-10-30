@@ -69,6 +69,9 @@ Uso
 | Deployment | `Josafat` | vercel o Digital ocean (Docker, Nginx) |
 
 
+![image](https://github.com/user-attachments/assets/73d49c6d-756c-4a33-9b71-332e43243b49)
+
+
 ## Inicializar prisma
 
 ```bash
