@@ -1,24 +1,37 @@
 # Cut & Style
 
+![image](https://github.com/user-attachments/assets/6b748a47-4fd1-47fe-b5c0-97f4d6e615b0)
+
+
 Gestión de Peluquerías - MVP
 Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la gestión de peluquerías. La aplicación permite a los dueños de peluquerías manejar las citas de sus clientes, administrar el personal, gestionar los servicios ofrecidos y visualizar reportes básicos sobre las operaciones diarias.
 
-## Características principales:
+![image](https://github.com/user-attachments/assets/63d096fb-7e73-4949-aead-3035e00fb3d5)
 
-- Mapa con la localizacion de las peluquerias disponibles.
+
+## Características principales:
 
   ![image](https://github.com/user-attachments/assets/26f06435-25c1-42bc-8465-abaf3d131492)
 
+- Mapa con la localizacion de las peluquerias disponibles.
+
+![image](https://github.com/user-attachments/assets/ed6abed8-e076-4fae-9b64-00b4865167b5)
 
 - Gestión de citas: Permite a los clientes reservar citas con los estilistas disponibles en la peluquería.
 
+![image](https://github.com/user-attachments/assets/3a03d106-2fb7-4a25-94d7-d7ec5f65193c)
+
 - Administración del personal: Permite al administrador añadir, editar o eliminar empleados.
 
-- Gestión de servicios: Los administradores pueden gestionar los servicios ofrecidos, incluyendo precios y tiempos estimados.
+  ![image](https://github.com/user-attachments/assets/a21e13b9-2ea3-492b-aa66-eaffdd6fe692)
+
+- Gestión de servicios: Los administradores pueden gestionar los servicios ofrecidos, incluyendo precios.
+
+  ![image](https://github.com/user-attachments/assets/efe0ee0e-803b-40cc-b21b-977499e4ce44)
 
 - Panel de reportes: Ofrece una visión básica de las citas y los ingresos generados.
 
-- Notificaciones por correo electrónico: Envía recordatorios automáticos a los clientes para sus citas.
+  
 
 Uso
 
@@ -28,7 +41,7 @@ Uso
 
 - Panel de control: Los administradores pueden visualizar un resumen de las citas diarias, los ingresos generados y los empleados disponibles.
 
-Deploy Frontend
+## Deploy Frontend
 
 [Cut & Style](http://143.198.98.157:3000/)
 
