@@ -23,15 +23,28 @@ Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la 
 
 - Administración del personal: Permite al administrador añadir, editar o eliminar empleados.
 
-  ![image](https://github.com/user-attachments/assets/a21e13b9-2ea3-492b-aa66-eaffdd6fe692)
+![vista admin de barberos](https://github.com/user-attachments/assets/cf117ee8-440f-4e39-b663-26e4e0b5f918)
+
+- Administración de los usuarios: Permite al administrador añadir, editar o eliminar usuarios.
+
+![vista admin usuarios](https://github.com/user-attachments/assets/d9f053df-aa10-4b49-9b29-fd0c54c3e5b8)
+
+- Administración de las peluquerias disponibles: Permite al administrador añadir, editar o eliminar peluquerias.
+
+![vista de admin de las peluquerias disponibles](https://github.com/user-attachments/assets/b78ce833-c356-421e-949e-64e1a710687d)
+
+- El Administrador puede ver la progrmacion de los turnos para cada barberia con los servicios prestados, usuario, horario, etc.
+
+![programacion de turnos](https://github.com/user-attachments/assets/7ff775d2-b88d-41ea-bea2-c6306c591e7e)
 
 - Gestión de servicios: Los administradores pueden gestionar los servicios ofrecidos, incluyendo precios.
 
-  ![image](https://github.com/user-attachments/assets/efe0ee0e-803b-40cc-b21b-977499e4ce44)
+![image](https://github.com/user-attachments/assets/efe0ee0e-803b-40cc-b21b-977499e4ce44)
 
-- Panel de reportes: Ofrece una visión básica de las citas.
+- Panel de citas para los barberos
 
-  ![image](https://github.com/user-attachments/assets/3676edeb-1dfa-4e59-96a4-4c7ff59366ac)
+![vista del pelucquero de sus turnos](https://github.com/user-attachments/assets/3aed6a7d-54a1-4a67-b026-c03186c5d471)
+
 
 
 Uso
