@@ -19,7 +19,7 @@ Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la 
 
 - Gestión de citas: Permite a los clientes reservar citas con los estilistas disponibles en la peluquería.
 
- ![image](https://github.com/user-attachments/assets/3a03d106-2fb7-4a25-94d7-d7ec5f65193c)
+![2f3fa7e4-6246-4f65-9ad0-0ffb3d67ce9a](https://github.com/user-attachments/assets/7c4cbe98-dd0e-4bbd-892e-961e6761d407)
 
 - Administración del personal: Permite al administrador añadir, editar o eliminar empleados.
 
