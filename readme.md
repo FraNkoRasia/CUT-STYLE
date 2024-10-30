@@ -11,11 +11,15 @@ Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la 
 
 ## Características principales:
 
-  ![image](https://github.com/user-attachments/assets/26f06435-25c1-42bc-8465-abaf3d131492)
+![image](https://github.com/user-attachments/assets/26f06435-25c1-42bc-8465-abaf3d131492)
+  
+- Varios Tipos de inicio de sesion: uno para los usuarios, otro para los barberos, y uno para el Admin (usuario:Cjsfranko@gmail.com pass:123)
+
+![image](https://github.com/user-attachments/assets/deaad28c-4c88-4b02-ae7e-58abb36496d0)
 
 - Mapa con la localizacion de las peluquerias disponibles.
 
- ![image](https://github.com/user-attachments/assets/ed6abed8-e076-4fae-9b64-00b4865167b5)
+![image](https://github.com/user-attachments/assets/ed6abed8-e076-4fae-9b64-00b4865167b5)
 
 - Gestión de citas: Permite a los clientes reservar citas con los estilistas disponibles en la peluquería.
 
