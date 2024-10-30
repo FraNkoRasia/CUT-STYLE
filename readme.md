@@ -15,11 +15,11 @@ Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la 
 
 - Mapa con la localizacion de las peluquerias disponibles.
 
-![image](https://github.com/user-attachments/assets/ed6abed8-e076-4fae-9b64-00b4865167b5)
+ ![image](https://github.com/user-attachments/assets/ed6abed8-e076-4fae-9b64-00b4865167b5)
 
 - Gestión de citas: Permite a los clientes reservar citas con los estilistas disponibles en la peluquería.
 
-![image](https://github.com/user-attachments/assets/3a03d106-2fb7-4a25-94d7-d7ec5f65193c)
+ ![image](https://github.com/user-attachments/assets/3a03d106-2fb7-4a25-94d7-d7ec5f65193c)
 
 - Administración del personal: Permite al administrador añadir, editar o eliminar empleados.
 
@@ -29,9 +29,10 @@ Este proyecto es un MVP (Producto Mínimo Viable) de una plataforma web para la 
 
   ![image](https://github.com/user-attachments/assets/efe0ee0e-803b-40cc-b21b-977499e4ce44)
 
-- Panel de reportes: Ofrece una visión básica de las citas y los ingresos generados.
+- Panel de reportes: Ofrece una visión básica de las citas.
 
-  
+  ![image](https://github.com/user-attachments/assets/3676edeb-1dfa-4e59-96a4-4c7ff59366ac)
+
 
 Uso
 
