@@ -4,8 +4,8 @@ import '../AdminDashboard/List.css'; // Importa los estilos para la lista de usu
 
 export default function ShiftList() {
     const [datos, setDatos] = useState([
-        { id: 1, nombre: 'Juan Pérez', barberia: 'Barbería Estilo', fecha: '2024-10-21', hora: '10:30', servi: 'Fade y Barba' },
-        { id: 2, nombre: 'Facundo Pérez', barberia: 'Styl Main', fecha: '2024-09-11', hora: '11:30', servi: 'Color y Corte' }
+        { id: 1, nombre: 'Juan Pérez', peluqueria: 'DON MATEO', barberia: 'Barbería Estilo', fecha: '2024-10-21', hora: '10:30', servi: 'Fade y Barba' },
+        { id: 2, nombre: 'Facundo Pérez', peluqueria: 'Pervieux', barberia: 'Styl Main', fecha: '2024-09-11', hora: '11:30', servi: 'Color y Corte' }
     ]);
 
     const [isEditing, setIsEditing] = useState(false);
@@ -40,6 +40,7 @@ export default function ShiftList() {
                     <thead>
                         <tr>
                             <th>User</th>
+                            <th>Haird Salon</th>
                             <th>Barber</th>
                             <th>Date</th>
                             <th>Hour</th>
@@ -52,6 +53,7 @@ export default function ShiftList() {
                         {datos.map((shift) => (
                             <tr key={shift.id}>
                                 <td>{shift.nombre}</td>
+                                <td>{shift.peluqueria}</td>
                                 <td>{shift.barberia}</td>
                                 <td>{shift.fecha}</td>
                                 <td>{shift.hora}</td>

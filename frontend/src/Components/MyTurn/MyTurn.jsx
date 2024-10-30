@@ -3,8 +3,8 @@ import './MyList.css';
 
 export default function MyTurn() {
     const datos = [
-        { nombre: 'Juan Pérez', barberia: 'Barbería Estilo', fecha: '2024-10-21', hora: '10:30', servi: 'Fade y Barba' },
-        { nombre: 'Facundo Pérez', barberia: 'Styl Main', fecha: '2024-9-11', hora: '10:30', servi: 'Color y Corte' }
+        { nombre: 'Juan Pérez', peluqueria: 'DON MATEO', barbero: 'Pervieux', fecha: '2024-10-21', hora: '10:30', servi: 'Fade y Barba' },
+        { nombre: 'Facundo Pérez', peluqueria: 'LA PELU', barbero: 'MATEO', fecha: '2024-9-11', hora: '10:30', servi: 'Color y Corte' }
     ];
 
     return (
@@ -14,6 +14,7 @@ export default function MyTurn() {
                 <thead>
                     <tr>
                         <th>User</th>
+                        <th>Haird Salon</th>
                         <th>Barber</th>
                         <th>Date</th>
                         <th>Hour</th>
@@ -24,7 +25,8 @@ export default function MyTurn() {
                     {datos.map((turno, index) => (
                         <tr className='turnList' key={index}>
                             <td>{turno.nombre}</td>
-                            <td>{turno.barberia}</td>
+                            <td>{turno.peluqueria}</td>
+                            <td>{turno.barbero}</td>
                             <td>{turno.fecha}</td>
                             <td>{turno.hora}</td>
                             <td>{turno.servi}</td>

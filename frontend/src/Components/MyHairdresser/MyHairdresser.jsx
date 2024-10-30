@@ -24,7 +24,8 @@ export default function MyHairdresser() {
       description: 'Our experienced stylists are skilled in creating a wide range of hair styles to suit your preferences. Whether you are looking for a trendy haircut, a classic updo, or a special occasion hairstyle, we have the expertise to bring your vision to life.',
       service1: 'Customized Styles',
       service2: 'Trendy and Versatile',
-      service3: 'Finishing Touches'
+      service3: 'Finishing Touches',
+      price: '$55.00'
     },
     {
       img: estilo2,
@@ -32,7 +33,8 @@ export default function MyHairdresser() {
       description: 'At Trim & Style, we take pride in delivering precision haircuts that leave you looking sharp and confident. Our talented barbers are trained in the latest cutting techniques and styles.',
       service1: 'Tailored Haircuts',
       service2: 'Clean and Precise',
-      service3: 'Refresh and Transform'
+      service3: 'Refresh and Transform',
+      price: '$65.00'
     },
     {
       img: estilo3,
@@ -40,7 +42,8 @@ export default function MyHairdresser() {
       description: 'Our beard grooming services are designed to help you maintain a well-groomed and polished appearance.',
       service1: 'Expert Beard Shaping',
       service2: 'Grooming and Maintenance',
-      service3: 'Personalized Advice'
+      service3: 'Personalized Advice',
+      price: '$60.00'
     },
     {
       img: estilo4,
@@ -48,7 +51,8 @@ export default function MyHairdresser() {
       description: 'Sit back and relax while we treat you to a rejuvenating hair wash experience.',
       service1: 'Deep Cleansing and Nourishment',
       service2: 'Relaxation and Rejuvenation',
-      service3: 'Healthy Hair Care'
+      service3: 'Healthy Hair Care',
+      price: '$70.00'
     },
   ];
 
@@ -71,6 +75,7 @@ export default function MyHairdresser() {
                 <li>{item.service2}</li>
                 <li>{item.service3}</li>
               </ul>
+              <h2>Price {item.price}</h2>
               <Boton texto="Book Appointment" className="boton custom-class" onClick={openModal} />
             </div>
           </div>

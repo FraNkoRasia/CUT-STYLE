@@ -73,6 +73,9 @@
     font-weight: 700;
     margin: 25px 0 25px;
 }
+.servicio h2{
+    font-size: clamp(16px, 3.493vw, 20px);
+}
 
 .servicio p {
     font-family: "Montserrat", sans-serif;
