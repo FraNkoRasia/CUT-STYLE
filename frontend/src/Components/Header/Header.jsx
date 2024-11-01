@@ -110,7 +110,7 @@ export default function Header() {
                                 <ul className={`admin-submenu ${adminMenuOpen ? 'open' : ''}`}>
                                     <li><Link to="/admin/users" onClick={() => handleMenuClick('/admin/users')}>List Users</Link></li>
                                     <li><Link to="/admin/barbers" onClick={() => handleMenuClick('/admin/barbers')}>List Barbers</Link></li>
-                                    <li><Link to="/admin/turns" onClick={() => handleMenuClick('/admin/turns')}>Shift list</Link></li>
+                                    <li><Link to="/admin/turns" onClick={() => handleMenuClick('/admin/turns')}>Shift List</Link></li>
                                     <li><Link to="/admin/hairdresser" onClick={() => handleMenuClick('/admin/hairdresser')}>List Hairdresser</Link></li>
                                 </ul>
                             </li>

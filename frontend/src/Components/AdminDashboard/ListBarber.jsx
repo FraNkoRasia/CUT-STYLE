@@ -72,7 +72,7 @@ export default function ListBarber() {
                 <div className="modal-over">
                     <div className="modal">
                         <button className="close-modal" onClick={() => setIsEditing(false)}>✖</button>
-                        <h3 className="titleModal-Listuser">Edit Barber</h3>
+                        <h3 className="titleModal-Listuser">EDIT BARBER</h3>
                         <form>
                             <div className="modalForm-row">
                                 <label>

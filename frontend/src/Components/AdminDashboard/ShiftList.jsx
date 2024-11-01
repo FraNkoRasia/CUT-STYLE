@@ -75,7 +75,7 @@ export default function ShiftList() {
                 <div className="modal-over">
                     <div className="modal">
                         <button className="close-modal" onClick={() => setIsEditing(false)}>✖</button>
-                        <h3 className="titleModal-Listuser">Edit Shift</h3>
+                        <h3 className="titleModal-Listuser">EDIT SHIFT</h3>
                         <form>
                             <div className="modalForm-row">
                                 <label>

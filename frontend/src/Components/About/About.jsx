@@ -2,6 +2,7 @@ import React from 'react';
 import Image from '/FraNko-3.webp';
 import Image2 from '/josafat.webp';
 import Image3 from '/amin.webp';
+import Image4 from '/Emanuel.webp';
 import '../About/About.css';
 import { ImGithub } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
@@ -62,6 +63,27 @@ export default function About() {
                     </div>
                 </div>
                 {/* Card 3 */}
+                <div className="card">
+                    <div className="cover">
+                        <img src={Image4} alt="" />
+                        <div className="img__back"></div>
+                    </div>
+                    <div className="description">
+                        <h2>Emanuel Rodriguez</h2>
+                        <p className='roldev'>FRONTEND DEVELOPER</p>
+                        <p className='desc'>
+                            Desarrollador especializado en la creación de interfaces
+                            atractivas y funcionales. Experto en tecnologías modernas
+                            como React y CSS, enfocado en ofrecer experiencias de usuario
+                            intuitivas y eficientes.</p>
+                        <div>
+                            <a className='iconogithub' href="https://github.com/Emanuel-Rodriguez-1996"><ImGithub size={40} /></a>
+                            <a className='iconolinkedin' href="https://www.linkedin.com/in/emanuel-rodriguez-07994a259/"><FaLinkedin size={40} /></a>
+                        </div>
+
+                    </div>
+                </div>
+                {/* Card 4 */}
                 <div className="card">
                     <div className="cover">
                         <img src={Image} alt="" />

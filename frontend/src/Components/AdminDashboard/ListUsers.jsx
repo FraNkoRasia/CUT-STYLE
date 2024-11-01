@@ -74,7 +74,7 @@ export default function ListUsers() {
                 <div className="modal-over">
                     <div className="modal">
                         <button className="close-modal" onClick={() => setIsEditing(false)}>✖</button>
-                        <h3 className='titleModal-Listuser'>Edit User</h3>
+                        <h3 className='titleModal-Listuser'>EDIT USER</h3>
                         <form>
                             <div className="modalForm-row">
                                 <label>
