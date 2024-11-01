@@ -85,6 +85,10 @@ Uso
 | Database | `Josafat` | PostgresSQL |
 | Deployment | `Josafat` | vercel o Digital ocean (Docker, Nginx) |
 
+## Presentación
+
+[Diapositivas](https://docs.google.com/presentation/d/1JJILlssQwqmORhgpHNxQh2HusadoFRoMvvXyu0_T7Fo/edit?usp=sharing)
+
 
 ![image](https://github.com/user-attachments/assets/73d49c6d-756c-4a33-9b71-332e43243b49)
 
