@@ -12,3 +12,4 @@ export interface IAppoinment {
   client: User;
   barber: Barbershop;
 }
+// agregar service y barbero

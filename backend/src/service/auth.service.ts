@@ -1,5 +1,6 @@
 import { encrypt } from "../helpers/encrypt.adapter";
 import { prisma } from "../data/postgres";
+import { UpdateUserDTO } from "../interfaces/user.interface";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -79,6 +80,43 @@ export class AuthService {
     return { token, user };
   }
 
+
+///////
+  static async getUsers(): Promise<IUser[]> {
+    return prisma.user.findMany({
+      include: { role: true },
+    });
+  }
+  static async getUsersById(id: number): Promise<IUser | null> {
+    return prisma.user.findUnique({
+      where: {
+        id
+      }
+    });
+  }
+  static async updateUser(id: number, data: UpdateUserDTO): Promise<IUser> {
+    const updatedUser = await prisma.user.update({
+      where: {
+        id: id
+      },
+      data: {
+        ...data,
+        updatedAt: new Date()
+      }
+    });
+    return updatedUser;
+  }
+
+  static async deleteUser(id: number): Promise<IUser> {
+    return prisma.user.delete({
+      where: {
+        id
+      }
+    });
+  }
+  //////
+
+  
   async verifyToken(token: string) {
     try {
       return jwt.verify(token, SECRET_KEY) as DecodedToken;

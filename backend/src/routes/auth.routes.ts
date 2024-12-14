@@ -25,4 +25,31 @@ authRouter.get(
   }
 );
 
+authRouter.get(
+  "/users",
+  authMiddleware,
+  roleMiddleware(["ADMIN"]),
+  AuthController.getAllUsers
+);
+
+authRouter.get(
+  "/users/:id",
+  authMiddleware,
+  roleMiddleware(["USER", "BARBER", "ADMIN"]),
+  AuthController.getOne
+);
+
+authRouter.put(
+  "/users/:id",
+  authMiddleware,
+  roleMiddleware(["BARBER", "ADMIN"]),
+  AuthController.update
+);
+
+authRouter.delete(
+  "/users/:id",
+  authMiddleware,
+  roleMiddleware(["BARBER", "ADMIN"]),
+  AuthController.delete
+);
 export default authRouter;

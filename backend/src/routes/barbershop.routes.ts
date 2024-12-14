@@ -31,8 +31,10 @@ router.put(
 router.delete(
   "/barbershops/:id",
   authMiddleware,
-  roleMiddleware(["BARBER, ADMIN"]),
+  roleMiddleware(["BARBER", "ADMIN"]),
   BarbershopController.delete
 );
+
+
 
 export default router;

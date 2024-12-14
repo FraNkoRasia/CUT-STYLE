@@ -47,4 +47,8 @@ model Appointment {
   userId   Int
   barber   Barbershop @relation(fields: [barberId], references: [id])
   barberId Int
+  }
+  
+model Service{
+
 }

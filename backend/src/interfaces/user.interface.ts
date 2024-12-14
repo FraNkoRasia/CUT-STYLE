@@ -46,3 +46,11 @@ export class LoginDTO {
   email: string;
   password: string;
 }
+export interface UpdateUserDTO {
+  name?: string;
+  email?: string;
+  password?: string; // La contraseña solo se actualizará si se proporciona
+  lastname?: string;
+  phone?: string;
+  roleId?: number;
+}
